@@ -183,11 +183,8 @@
         }
         
         .professor-image {
-            width: 50%; /* Reduce width to 50% of its original size */
-            height: auto; /* Maintain aspect ratio */
-            display: flex; /* Ensure alignment */
-            justify-content: center; /* Center content */
-            align-items: center; /* Align vertically */
+            transform: scale(0.5); /* Scale down to 50% */
+            transform-origin: center; /* Ensure the transformation happens from the center */
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
