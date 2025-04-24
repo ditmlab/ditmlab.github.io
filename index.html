@@ -153,14 +153,58 @@
             text-align: center;
             /* Replace with a real, optimized background image */
             /* background: linear-gradient(rgba(0, 45, 98, 0.85), rgba(0, 45, 98, 0.7)), url('') no-repeat center center/cover; */
-            background-image: linear-gradient(rgba(0, 35, 102, 0.9), rgba(0, 35, 102, 0.7)), url('/assets/video/building.mp4');
-            position: relative; /* For potential pseudo-elements or overlays */
+            /* background-image: linear-gradient(rgba(0, 35, 102, 0.9), rgba(0, 35, 102, 0.7)), url('/assets/video/building.mp4'); */
+            /* position: relative;  */
         }
         
-        .hero-content {
+        /* .hero-content {
             max-width: 900px;
             padding: 2rem;
             animation: fadeIn 1.5s ease-out;
+        } */
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place it behind the content */
+            overflow: hidden; /* Hide parts of video that extend */
+        }
+
+        .video-background::after { /* Optional: Add dark overlay like before */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 45, 98, 0.7); /* Adjust color and opacity */
+            z-index: 1;
+        }
+
+        .video-background video {
+            min-width: 100%; 
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            /* Center the video */
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* Cover the area, cropping if needed */
+            z-index: 0; /* Behind the overlay */
+        }
+
+        .hero-content {
+            position: relative; /* Ensure it's above the video background */
+            z-index: 2; /* Above video and overlay */
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-out;
+            /* Text color is inherited or set explicitly if needed */
         }
         
         .hero h1 {
@@ -675,6 +719,14 @@
 
     <main>
         <section class="hero" id="home">
+
+            <div class="video-background">
+                <video autoplay muted loop playsinline>
+                    <source src="/assets/video/building.mp4" type="video/mp4">
+                     <!-- Your browser does not support the video tag. -->
+                </video>
+            </div>
+
             <div class="hero-content">
                 <h1>디지털혁신 및 기술경영 연구실</h1>
                 <p>Digital Innovation and Technology Management Lab</p>
