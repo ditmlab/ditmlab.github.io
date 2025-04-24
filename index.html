@@ -143,18 +143,28 @@
         
         /* --- Hero Section --- */
         .hero {
-            min-height: 80vh; /* Use min-height instead of fixed height */
-            padding-top: var(--header-height); /* Account for fixed header */
+            /* min-height: 80vh; 
+            padding-top: var(--header-height); 
             background-color: var(--primary-color);
             color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            text-align: center; */
             /* Replace with a real, optimized background image */
             /* background: linear-gradient(rgba(0, 45, 98, 0.85), rgba(0, 45, 98, 0.7)), url('') no-repeat center center/cover; */
             /* background-image: linear-gradient(rgba(0, 35, 102, 0.9), rgba(0, 35, 102, 0.7)), url('/assets/video/building.mp4'); */
             /* position: relative;  */
+            position: relative; /* Needed for absolute positioning of children */
+            overflow: hidden; /* Prevent potential scrollbars from video */
+             /* Keep other hero styles like min-height, display, align-items, etc. */
+             min-height: 80vh; 
+            padding-top: var(--header-height); 
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         
         /* .hero-content {
@@ -201,7 +211,7 @@
         .hero-content {
             position: relative; /* Ensure it's above the video background */
             z-index: 2; /* Above video and overlay */
-            max-width: 800px;
+            max-width: 900px;
             padding: 2rem;
             animation: fadeIn 1.5s ease-out;
             /* Text color is inherited or set explicitly if needed */
