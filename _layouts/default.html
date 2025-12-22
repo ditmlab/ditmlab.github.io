@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }} · 디지털혁신 및 기술경영 연구실</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
+  {% assign _noindex = site.noindex %}
+  {% if page.noindex == true %}{% assign _noindex = true %}{% endif %}
+  {% if page.noindex == false %}{% assign _noindex = false %}{% endif %}
+  {% if _noindex %}
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="googlebot" content="noindex,nofollow,noarchive,noimageindex" />
+  {% endif %}
+  <meta name="theme-color" content="#003876" />
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" sizes="180x180" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css?v={{ site.time | date: '%s' }}" />
+</head>
+{% assign _is_home = false %}
+{% if page.url == '/' or page.url == '/index.html' %}{% assign _is_home = true %}{% endif %}
+<body class="{% if _is_home %}is-home{% else %}is-subpage{% endif %}">
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  {% include header.html %}
+
+  <main id="main" role="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script src="/assets/js/main.js?v={{ site.time | date: '%s' }}" defer></script>
+</body>
+</html>

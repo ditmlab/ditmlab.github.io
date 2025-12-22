@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<section class="page-hero">
+  <div class="container">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-hero-meta">
+      {% assign is_award = false %}
+      {% if page.categories contains 'award' %}{% assign is_award = true %}{% endif %}
+      {% if page.tags contains 'award' %}{% assign is_award = true %}{% endif %}
+      {% if is_award %}<span class="post-badge post-badge--award">Award</span>{% endif %}
+      <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
+    </div>
+    {% if page.summary %}<p class="post-summary">{{ page.summary }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <article class="post-content">
+      {{ content }}
+    </article>
+  </div>
+</section>

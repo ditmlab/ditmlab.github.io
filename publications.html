@@ -1,0 +1,150 @@
+---
+layout: default
+title: 논문
+description: DITM Lab 논문
+permalink: /publications.html
+---
+
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    <h1>논문</h1>
+    <p>국내외 학술지 게재 논문과 학위논문을 확인할 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="section section--alt section--compact">
+  <div class="container">
+    {% if site.data.publications %}
+    {% assign pubs_source = site.data.publications %}
+
+    {%- comment -%}
+    featured: true/false (manual)
+    If not specified, we auto-treat FT50/UTD24 in note as featured.
+    {%- endcomment -%}
+    {% assign featured = "" | split: "" %}
+    {% assign regular = "" | split: "" %}
+    {% for p in pubs_source %}
+    {% assign is_featured = false %}
+    {% if p.featured == true %}{% assign is_featured = true %}{% endif %}
+    {% if p.featured == false %}{% assign is_featured = false %}{% endif %}
+    {% if p.featured != true and p.featured != false and p.note %}
+    {% assign note_u = p.note | upcase %}
+    {% if note_u contains 'FT50' or note_u contains 'UTD24' %}{% assign is_featured = true %}{% endif %}
+    {% endif %}
+
+    {% if is_featured %}
+    {% assign featured = featured | push: p %}
+    {% else %}
+    {% assign regular = regular | push: p %}
+    {% endif %}
+    {% endfor %}
+
+    {% if featured and featured.size > 0 %}
+    <section class="pub-featured" aria-label="대표 논문">
+      <h2 class="h2 h2--tight">대표 논문</h2>
+
+      <div class="pub-list">
+        {% for p in featured %}
+        <article class="pub-item pub-item--featured">
+          <div class="pub-top">
+            <h3 class="pub-title">{% if p.url %}<a class="inline-link" href="{{ p.url }}" target="_blank"
+                rel="noopener noreferrer">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+            <span class="year">{{ p.year }}</span>
+          </div>
+          {% if p.authors %}<p class="pub-meta">{{ p.authors }}</p>{% endif %}
+          {% if p.venue %}<p class="pub-journal">{{ p.venue }}{% if p.note %} <span class="pub-note">({{ p.note
+              }})</span>{% endif %}</p>{% endif %}
+
+          {% if p.student_involved == true or p.tags and p.tags.size > 0 %}
+          <div class="pub-extra" aria-label="논문 태그">
+            {% if p.student_involved == true %}
+            <span class="pub-badge" title="학생 참여" aria-label="학생 참여">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 10L4.25 9 12 5l7.75 4L12 13z" fill="currentColor" />
+              </svg>
+              학생 참여
+            </span>
+            {% endif %}
+            {% if p.tags and p.tags.size > 0 %}
+            <div class="pub-tags">
+              {% for t in p.tags %}<span class="pub-tag">{{ t }}</span>{% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <div style="margin-top: var(--space-6);"></div>
+    {% endif %}
+
+    <section class="pub-all" aria-label="전체 논문" data-include-featured="true">
+      <div class="pub-all-head">
+        <h2 class="h2 h2--tight">전체 논문</h2>
+        <label class="pub-toggle">
+          <input type="checkbox" data-pub-include-featured checked />
+          <span>대표논문 포함</span>
+        </label>
+      </div>
+
+      {%- comment -%}
+      Preserve ordering within the same year as written in _data/publications.yml.
+      We compute year headers (desc), but the items for each year are filtered from the
+      original array so their relative order is preserved.
+      {%- endcomment -%}
+      {% assign years_sorted = pubs_source | map: "year" | uniq | sort | reverse %}
+      <div class="pub-years">
+        {% for y in years_sorted %}
+        {% assign items = pubs_source | where: "year", y %}
+        <section class="pub-year" aria-label="{{ y }}">
+          <h2 class="pub-year-title">{{ y }}</h2>
+          <div class="pub-list">
+            {% for p in items %}
+            {% assign _is_featured = false %}
+            {% if p.featured == true %}{% assign _is_featured = true %}{% endif %}
+            {% if p.featured == false %}{% assign _is_featured = false %}{% endif %}
+            {% if p.featured != true and p.featured != false and p.note %}
+            {% assign _note_u = p.note | upcase %}
+            {% if _note_u contains 'FT50' or _note_u contains 'UTD24' %}{% assign _is_featured = true %}{% endif %}
+            {% endif %}
+
+            <article class="pub-item" data-is-featured="{% if _is_featured %}true{% else %}false{% endif %}">
+              <div class="pub-top">
+                <h3 class="pub-title">{% if p.url %}<a class="inline-link" href="{{ p.url }}" target="_blank"
+                    rel="noopener noreferrer">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+              </div>
+              {% if p.authors %}<p class="pub-meta">{{ p.authors }}</p>{% endif %}
+              {% if p.venue %}<p class="pub-journal">{{ p.venue }}{% if p.note %} <span class="pub-note">({{ p.note
+                  }})</span>{% endif %}</p>{% endif %}
+
+              {% if p.student_involved == true or p.tags and p.tags.size > 0 %}
+              <div class="pub-extra" aria-label="논문 태그">
+                {% if p.student_involved == true %}
+                <span class="pub-badge" title="학생 참여" aria-label="학생 참여">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 10L4.25 9 12 5l7.75 4L12 13z" fill="currentColor" />
+                  </svg>
+                  학생 참여
+                </span>
+                {% endif %}
+                {% if p.tags and p.tags.size > 0 %}
+                <div class="pub-tags">
+                  {% for t in p.tags %}<span class="pub-tag">{{ t }}</span>{% endfor %}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+            </article>
+            {% endfor %}
+          </div>
+        </section>
+        {% endfor %}
+      </div>
+    </section>
+    {% else %}
+    <p class="lead">`_data/publications.yml`이 아직 없습니다.</p>
+    {% endif %}
+  </div>
+</section>

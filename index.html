@@ -1,915 +1,141 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>디지털혁신 및 기술경영 연구실</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            /* ... other variables ... */
-            --nav-link-font-size: 0.95rem; /* Optional: Define variable for nav link size */
+---
+layout: default
+title: DITM Lab
+description: "연세대학교 디지털혁신 및 기술경영 연구실(Digital Innovation and Technology Management Lab)은 디지털 전환, AI 기반 경영, 기술경영 분야의 데이터 기반 연구를 수행합니다."
+permalink: /index.html
+---
 
-            /* --primary-color: #002D62; */
-            --primary-color: #002366; /* Darker Blue */
-            --secondary-color: #005EB8; /* Brighter Blue*/
-            --accent-color: #4169E1; /* Accent Blue */
-            --light-color: #E6EBF4;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-            --dark-text: #343a40;
-            --light-text: #f8f9fa; /* Changed from light blue/gray */
-            --grey-text: #6c757d;
-            --border-color: #dee2e6;
-            
-            --header-height: 70px;
-            --font-heading: 'Poppins', sans-serif;
-            --font-body: 'Noto Sans KR', sans-serif;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: var(--header-height); /* Offset for fixed header */
-        }
-        
-        body {
-            font-family: var(--font-body);
-            background-color: var(--white);
-            color: var(--dark-text);
-            line-height: 1.7;
-            font-size: 16px;
-        }
-        
-        /* --- Header --- */
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 0 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            height: var(--header-height);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            height: 100%;
-        }
-        
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: var(--white);
-            text-decoration: none;
-        }
-        
-        .nav-toggle {
-            display: block; /* Visible on mobile */
-            background: transparent;
-            border: none;
-            color: var(--white);
-            font-size: 1.8rem;
-            cursor: pointer;
-            z-index: 1001; /* Above nav */
-        }
-        
-        nav {
-            position: fixed;
-            top: 0;
-            right: -100%; /* Hidden off-screen */
-            width: 70%;
-            max-width: 300px;
-            height: 100vh;
-            background-color: var(--primary-color);
-            transition: right 0.3s ease-in-out;
-            z-index: 1000;
-            padding-top: var(--header-height);
-            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-        }
-        
-        nav.active {
-            right: 0;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex; /* Default to flex */
-            flex-direction: column; /* Vertical on mobile */
-            align-items: center;
-            padding-top: 2rem;
-        }
-        
-        nav ul li {
-            width: 100%;
-            text-align: center;
-        }
-        
-        nav ul li a {
-            display: block;
-            color: var(--light-text);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 1rem;
-            transition: background-color 0.3s, color 0.3s;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        nav ul li a:hover {
-            /* background-color: var(--secondary-color);
-            color: var(--white); */
-            color: var(--light-color);
+<section class="hero" id="home">
+    <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto" poster="/assets/img/avatar-placeholder.svg">
+            <source src="/assets/video/building.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
-        }
-        
-        /* --- Hero Section --- */
-        .hero {
-            /* min-height: 80vh; 
-            padding-top: var(--header-height); 
-            background-color: var(--primary-color);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center; */
-            /* Replace with a real, optimized background image */
-            /* background: linear-gradient(rgba(0, 45, 98, 0.85), rgba(0, 45, 98, 0.7)), url('') no-repeat center center/cover; */
-            /* background-image: linear-gradient(rgba(0, 35, 102, 0.9), rgba(0, 35, 102, 0.7)), url('/assets/video/building.mp4'); */
-            /* position: relative;  */
-            position: relative; /* Needed for absolute positioning of children */
-            overflow: hidden; /* Prevent potential scrollbars from video */
-             /* Keep other hero styles like min-height, display, align-items, etc. */
-             min-height: 80vh; 
-            padding-top: var(--header-height); 
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        
-        /* .hero-content {
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeIn 1.5s ease-out;
-        } */
-        
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Place it behind the content */
-            overflow: hidden; /* Hide parts of video that extend */
-        }
+    <div class="container">
+        <div class="hero-content hero-content--center">
+            <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Yonsei University · Graduate School of Information</div>
+            <h1 class="hero-title">디지털혁신 및 기술경영 연구실</h1>
+            <p class="hero-subtitle">Digital Innovation and Technology Management Lab</p>
+            <div class="hero-actions hero-actions--center">
+                <a class="btn btn--solid" href="/about.html">연구실 소개</a>
+                <a class="btn btn--outline" href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        .video-background::after { /* Optional: Add dark overlay like before */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 45, 98, 0.4); /* Adjust color and opacity */
-            z-index: 1;
-        }
+<section class="section" aria-label="연구 분야 및 바로가기">
+    <div class="container">
+        <div class="home-split">
+            <div>
+                <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Research</div>
+                <h2 class="h2">연구 분야</h2>
+                <p class="lead">디지털 전환, AI 기반 의사결정, 기술혁신의 확산과 성과를 데이터 기반으로 분석합니다.</p>
 
-        .video-background video {
-            min-width: 100%; 
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            /* Center the video */
-            position: absolute; 
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover; /* Cover the area, cropping if needed */
-            z-index: 0; /* Behind the overlay */
-        }
+                <div class="feature-list" aria-label="연구 키워드">
+                    <article class="feature">
+                        <div class="feature-icon" aria-hidden="true">DT</div>
+                        <div>
+                            <h3 class="feature-title">Digital Transformation</h3>
+                            <p class="feature-text">조직·산업의 전환 전략과 성과 메커니즘을 연구합니다.</p>
+                        </div>
+                    </article>
+                    <article class="feature">
+                        <div class="feature-icon" aria-hidden="true">AI</div>
+                        <div>
+                            <h3 class="feature-title">AI Management</h3>
+                            <p class="feature-text">AI 도입이 의사결정·생산성·역량에 미치는 영향을 분석합니다.</p>
+                        </div>
+                    </article>
+                    <article class="feature">
+                        <div class="feature-icon" aria-hidden="true">TM</div>
+                        <div>
+                            <h3 class="feature-title">Technology & Innovation</h3>
+                            <p class="feature-text">혁신의 확산·상업화, 기업가정신과 생태계를 다룹니다.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
 
-        .hero-content {
-            position: relative; /* Ensure it's above the video background */
-            z-index: 2; /* Above video and overlay */
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeIn 1.5s ease-out;
-            /* Text color is inherited or set explicitly if needed */
-        }
-        
-        .hero h1 {
-            font-family: var(--font-heading);
-            font-size: 2.5rem; /* Adjusted for mobile */
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            letter-spacing: 1px;
-        }
-        
-        .hero p {
-            font-size: 1.1rem; /* Adjusted for mobile */
-            margin-bottom: 2rem;
-            color: var(--light-text);
-            opacity: 0.9;
-        }
-        
-        /* .btn {
-            display: inline-block;
-            background-color: var(--accent-color); 
-            color: var(--white); 
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent-color); 
-            font-family: var(--font-heading);
-        }
-        
-        .btn:hover {
-            background-color: transparent;
-            color: var(--accent-color); 
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(65, 105, 225, 0.2); 
-        } */
-
-        .btn {
-            display: inline-block;
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid var(--white);
-            animation: fadeInUp 1s ease-out 0.4s forwards;
-            opacity: 0;
-        }
-        
-        .btn:hover {
-            background-color: transparent;
-            color: var(--white);
-        }
-        
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* --- General Section Styling --- */
-        section {
-            padding: 4rem 1rem; /* Reduced padding for mobile */
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem; /* Padding inside container for content */
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-family: var(--font-heading);
-            font-size: 2rem; /* Adjusted for mobile */
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-color); 
-            margin: 0.5rem auto 0;
-        }
-        
-        /* --- About Section --- */
-         #about ul {
-           list-style: none; 
-           padding-left: 0; 
-           margin-top: 1.5rem;
-        }
-
-        #about li {
-            position: relative;
-            padding-left: 1.5rem; 
-            margin-bottom: 0.8rem;
-        }
-
-        #about li::before {
-            content: '✔'; 
-            color: var(--secondary-color);
-            position: absolute;
-            left: 0;
-            top: 0px;
-            font-size: 1rem;
-        }
-        
-        /* --- Professor Section --- */
-        #professor {
-            background-color: var(--light-bg);
-        }
-        
-        .professor-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Stack on mobile */
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .professor-image {
-             max-width: 300px; /* Limit size */
-             margin: 0 auto; /* Center image */
-             border-radius: 50%; /* Circular image */
-             overflow: hidden;
-             box-shadow: 0 8px 25px rgba(0, 45, 98, 0.15);
-             border: 5px solid var(--white);
-        }
-        
-        .professor-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .professor-info h3 {
-            font-family: var(--font-heading);
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            text-align: center; /* Center on mobile */
-        }
-         .professor-info p, .professor-info ul {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            color: var(--dark-text);
-         }
-        .professor-info ul {
-            list-style-position: inside;
-            padding-left: 0;
-        }
-        .professor-info li{
-            margin-bottom: 0.3rem;
-        }
-         .professor-info strong {
-            color: var(--primary-color);
-            margin-right: 0.5em;
-         }
-        .professor-info a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .professor-info a:hover {
-            color: var(--accent-color); 
-            text-decoration: underline;
-        }
-        
-        /* --- Members Section --- */
-        .members-grid {
-            display: grid;
-            grid-template-columns: 1fr; 
-            gap: 1.5rem; 
-        }
-        
-        .member-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex; 
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .member-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .member-image {
-            height: 200px;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            transition: transform 0.3s ease;
-        }
-        .member-card:hover .member-image img{
-             transform: scale(1.05);
-        }
-        
-        .member-info {
-            padding: 1.5rem 1rem;
-            flex-grow: 1; 
-        }
-        
-        .member-info h3 {
-            font-family: var(--font-heading);
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .member-info p {
-            color: var(--grey-text);
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-        .member-info strong {
-             color: var(--dark-text);
-        }
-        
-        .member-info .position {
-            color: var(--secondary-color);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            display: block; 
-            font-size: 0.95rem;
-        }
-        
-        /* --- Publications Section --- */
-        #publications {
-             background-color: var(--light-bg);
-        }
-        
-        .publication-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .publication-item {
-            background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 5px solid var(--secondary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .publication-item:hover {
-            transform: translateX(5px);
-             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .publication-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem; 
-            font-family: var(--font-body); 
-            font-weight: 700;
-        }
-        
-        .publication-item .authors {
-            font-style: italic;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--grey-text);
-        }
-        .publication-item .authors Namil Kim* { 
-             font-weight: 700;
-             color: var(--dark-text);
-        }
-        
-        .publication-item .journal {
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-            color: var(--dark-text);
-        }
-        .publication-item .journal span { 
-             font-size: 0.8rem;
-             color: var(--grey-text);
-             font-style: italic;
-             margin-left: 5px;
-        }
-        
-        .publication-item .year {
-            display: inline-block;
-            background-color: var(--accent-color); 
-            color: var(--white); /* Adjusted contrast */
-            padding: 0.2rem 0.6rem;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-        
-        /* --- Footer --- */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-content h2 {
-            font-family: var(--font-heading);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .footer-contact p {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .footer-links {
-            margin: 2rem 0;
-        }
-        
-        .footer-links a {
-            color: var(--light-text);
-            margin: 0 0.8rem;
-            text-decoration: none;
-            transition: color 0.3s, text-decoration 0.3s;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-color); 
-            text-decoration: underline;
-        }
-        
-        .copyright {
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-        
-        /* --- Responsive Design --- */
-        
-        /* Small devices (tablets, 768px and up) */
-        @media (min-width: 768px) {
-            body {
-                font-size: 17px; 
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .nav-toggle {
-                display: none; /* Hide toggle on larger screens */
-            }
-            
-            nav {
-                position: static; /* Reset nav positioning */
-                height: auto;
-                width: auto;
-                background-color: transparent;
-                box-shadow: none;
-                padding-top: 0;
-                right: 0; 
-                /* Ensure mobile slide-in doesn't affect desktop */
-                transition: none; 
-            }
-            
-            nav ul {
-                flex-direction: row; 
-                padding-top: 0;
-                align-items: center; 
-            }
-            
-            nav ul li {
-                margin-left: 0.5rem;
-                width: auto; 
-                 text-align: left; 
-            }
-            
-            nav ul li a {
-                padding: 0.5rem 0.6rem;
-                border-bottom: none;
-                color: var(--white); 
-                display: inline-block; 
-                white-space: nowrap; 
-            }
-            
-            nav ul li a:hover {
-                background-color: transparent;
-                color: var(--accent-color); 
-            }
-            
-            .hero {
-                min-height: 90vh;
-            }
-            
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.3rem;
-            }
-            
-            section {
-                padding: 5rem 2rem;
-            }
-             .container {
-                padding: 0 2rem;
-            }
-             .section-title h2 {
-                font-size: 2.5rem;
-            }
-            
-            .professor-grid {
-                grid-template-columns: 1fr 2fr; /* Side-by-side layout */
-                 gap: 3rem;
-            }
-             .professor-info h3{
-                 text-align: left; /* Align left on larger screens */
-             }
-             
-            .members-grid {
-                 grid-template-columns: repeat(2, 1fr); 
-                 gap: 2rem;
-            }
-        }
-        
-        /* Medium devices (desktops, 992px and up) */
-        @media (min-width: 992px) {
-
-            .hero {
-                min-height: 100vh;
-            }
-             .hero h1 {
-                 font-size: 4rem;
-             }
-             .hero p {
-                 font-size: 1.5rem;
-             }
-            .members-grid {
-                 grid-template-columns: repeat(3, 1fr); 
-            }
-            nav ul li {
-                 margin-left: 0.5rem;
-             }
-        }
-        
-        /* Large devices (large desktops, 1200px and up) */
-        @media (min-width: 1200px) {
-            nav ul li {
-                /* Adjust this margin if needed for large screens */
-                margin-left: 0.5rem;
-            }
-            .members-grid {
-                 grid-template-columns: repeat(4, 1fr); 
-            }
-        }
-
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo">디지털혁신 및 기술경영 연구실</a>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-            <nav>
-                <ul>
-                    <li><a href="#about">소개</a></li>
-                    <li><a href="#professor">교수</a></li>
-                    <li><a href="#members">연구원</a></li>
-                    <li><a href="#publications">논문</a></li>
-                    <li><a href="#contact">연락처</a></li>
+            <aside class="home-panel" aria-label="Quick Links">
+                <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Quick Links</div>
+                <ul class="home-links">
+                    <li><a class="home-link" href="/about.html"><span>소개</span><span class="home-link-sub">Research overview</span></a></li>
+                    <li><a class="home-link" href="/members.html"><span>구성원</span><span class="home-link-sub">People</span></a></li>
+                    <li><a class="home-link" href="/publications.html"><span>논문</span><span class="home-link-sub">Publications</span></a></li>
+                    <li><a class="home-link" href="/news.html"><span>소식</span><span class="home-link-sub">News</span></a></li>
+                    <li><a class="home-link" href="/gallery.html"><span>사진첩</span><span class="home-link-sub">Gallery</span></a></li>
+                    <li><a class="home-link" href="/contact.html"><span>연락처</span><span class="home-link-sub">Location & email</span></a></li>
                 </ul>
-            </nav>
+            </aside>
         </div>
-    </header>
+    </div>
+</section>
 
-    <main>
-        <section class="hero" id="home">
+<section class="section section--alt" aria-label="최근 논문">
+    <div class="container">
+        <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Latest</div>
+        <h2 class="h2">최근 논문</h2>
+        <p class="lead">최신 성과를 빠르게 확인할 수 있습니다.</p>
 
-            <div class="video-background">
-                <video autoplay muted loop playsinline>
-                    <source src="/assets/video/building.mp4" type="video/mp4">
-                     <!-- Your browser does not support the video tag. -->
-                </video>
-            </div>
-
-            <div class="hero-content">
-                <h1>디지털혁신 및 기술경영 연구실</h1>
-                <p>Digital Innovation and Technology Management Lab</p>
-                <a href="#about" class="btn">더 알아보기</a>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <div class="section-title">
-                    <h2>연구실 소개</h2>
-                </div>
-                <div class="about-content">
-                    <p>우리 연구실은 디지털 전환, AI 기반 경영, 기술 경영에 중점을 두고 있습니다. 계량경제학적 방법론과 데이터 기반 분석을 활용하여 복잡한 문제를 해결하고, 산업 및 학계와의 긴밀한 협력을 통해 실질적인 응용 연구를 수행하고 있습니다.</p>
-                    <p>연구실의 주요 연구 분야는 다음과 같습니다:</p>
-                    <ul>
-                        <li>디지털전환 및 경영</li>
-                        <li>AI경영</li>
-                        <li>기술경영</li>
-                        <li>창업</li>
-                    </ul>
-                    <p>우리 연구실은 연구원들과 함께 연구하며 성장하는 환경을 제공합니다. 다양한 배경과 전문성을 가진 구성원들이 협력하여 창의적인 아이디어를 발전시키고 있습니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="professor">
-            <div class="container">
-                <div class="section-title">
-                    <h2>교수 소개</h2>
-                </div>
-                <div class="professor-grid">
-                    <div class="professor-image">
-                        <img src="/assets/img/namil.jpg" alt="Professor Name">
-                    </div>
-                    <div class="professor-info">
-                        <h3>김남일</h3>
-                        <p><strong>연구 분야:</strong> 디지털전환, AI경영, 기술경영</p>
-                        <p><strong>홈페이지:</strong> <a href="https://namilkim.github.io" target="_blank" rel="noopener noreferrer">https://namilkim.github.io</a></p>
-                        <p><strong>이력:</strong></p>
-                        <ul>
-                            <li>현) 연세대학교 부교수 (2025 - 현재)</li>
-                            <li>전) 건국대학교 조교수 (2023 - 2025)</li>
-                            <li>전) 하얼빈공업대학교 부교수 (2019 - 2023)</li>
-                        </ul>
-                        <p><strong>연락처:</strong> <a href="mailto:namil.kim@yonsei.ac.kr">namil.kim@yonsei.ac.kr</a></p>
+        {% if site.data.publications %}
+            {% assign pubs_sorted = site.data.publications | sort: "year" | reverse %}
+            <div class="pub-list" style="margin-top: var(--space-6);">
+                {% for p in pubs_sorted limit: 3 %}
+                    <article class="pub-item">
+                        <div class="pub-top">
+                            <h3 class="pub-title">{% if p.url %}<a class="inline-link" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+                            <span class="year">{{ p.year }}</span>
                         </div>
-                </div>
+                        {% if p.authors %}<p class="pub-meta">{{ p.authors }}</p>{% endif %}
+                        {% if p.venue %}<p class="pub-journal">{{ p.venue }}{% if p.note %} <span class="pub-note">({{ p.note }})</span>{% endif %}</p>{% endif %}
+                    </article>
+                {% endfor %}
             </div>
-        </section>
+            <div class="home-cta">
+                <a class="btn btn--brand" href="/publications.html">전체 논문 보기</a>
+            </div>
+        {% else %}
+            <p class="lead" style="margin-top: var(--space-6);">논문 데이터가 아직 준비되지 않았습니다.</p>
+        {% endif %}
+    </div>
+</section>
 
-        <section id="members">
-            <div class="container">
-                <div class="section-title">
-                    <h2>연구원 소개</h2>
-                </div>
-                <div class="members-grid">
-                    <div class="member-card">
-                        <div class="member-image">
-                            <img src="/assets/img/blank_pic.jpg" alt="Member Photo" loading="lazy">
+<section class="section" aria-label="최근 소식">
+    <div class="container">
+        <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>News</div>
+        <h2 class="h2">최근 소식</h2>
+        <p class="lead">연구실 소식과 수상/공지 업데이트를 확인하세요.</p>
+
+        {% if site.posts and site.posts.size > 0 %}
+            <div class="post-grid" style="margin-top: var(--space-6);" aria-label="최근 소식 목록">
+                {% for post in site.posts limit: 2 %}
+                    <article class="post-item">
+                        <div class="post-item-top">
+                            <h3 class="post-item-title"><a class="inline-link" href="{{ post.url }}">{{ post.title }}</a></h3>
+                            <div class="post-right">
+                                {% assign is_award = false %}
+                                {% if post.categories contains 'award' %}{% assign is_award = true %}{% endif %}
+                                {% if post.tags contains 'award' %}{% assign is_award = true %}{% endif %}
+                                {% if is_award %}<span class="post-badge post-badge--award">Award</span>{% endif %}
+                                <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                            </div>
                         </div>
-                        <div class="member-info">
-                            <h3>심해원</h3>
-                            <p class="position">박사과정</p>
-                            <!-- <p><strong>연구 분야:</strong> 주요 연구 주제</p>
-                            <p><strong>Email:</strong> <a href="mailto:email@yonsei.ac.kr">email@yonsei.ac.kr</a></p> -->
-                        </div>
-                    </div>
-                    
-                    <div class="member-card">
-                        <div class="member-image">
-                             <img src="/assets/img/blank_pic.jpg" alt="Member Photo" loading="lazy">
-                        </div>
-                        <div class="member-info">
-                            <h3>이하람</h3>
-                            <p class="position">석사과정</p>
-                            <!-- <p><strong>연구 분야:</strong> 주요 연구 주제</p>
-                             <p><strong>Email:</strong> <a href="mailto:email@yonsei.ac.kr">email@yonsei.ac.kr</a></p> -->
-                        </div>
-                    </div>
-                    
-                    </div>
+                        {% if post.summary %}
+                            <p class="post-excerpt">{{ post.summary | strip_html | strip_newlines | truncate: 140 }}</p>
+                        {% elsif post.excerpt %}
+                            <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
+                        {% endif %}
+                    </article>
+                {% endfor %}
             </div>
-        </section>
-
-        <section id="publications">
-            <div class="container">
-                <div class="section-title">
-                    <h2>대표논문</h2>
-                </div>
-                <div class="publication-list">
-                    <div class="publication-item">
-                        <h3>How does artificial intelligence improve human decision-making? Evidence from the AI-powered Go program</h3>
-                        <p class="authors">Sukwoong Choi, Hyo Kang, Namil Kim*, and Junsik Kim</p>
-                        <p class="journal">Strategic Management Journal <span>(UTD24, FT50)</span></p>
-                        <span class="year">2025</span>
-                    </div>
-                    
-                    <div class="publication-item">
-                         <h3>Connecting the dots between democracy and innovation: The mediating role of economic freedom and press freedom</h3>
-                         <p class="authors">Hyungseok Yoon, Christopher Boudreaux, and Namil Kim*</p>
-                         <p class="journal">Research Policy <span>(FT50)</span></p>
-                         <span class="year">2024</span>
-                    </div>
-                    
-                     <div class="publication-item">
-                         <h3>Climate impact, institutional context, and national climate change adaptation IP protection rates</h3>
-                         <p class="authors">Hyungseok Yoon*, Peter Tashman, Mirko Benischke, Jonathan Doh, and Namil Kim</p>
-                         <p class="journal">Journal of Business Venturing <span>(FT50)</span></p>
-                         <span class="year">2024</span>
-                    </div>
-                    
-                    <div class="publication-item">
-                        <h3>Dynamic patterns of industry convergence: Evidence from a large amount of unstructured data</h3>
-                        <p class="authors">Namil Kim, Hyeokseong Lee, Wonjoon Kim*, Hyunjong Lee, and Jong Hwan Suh</p>
-                        <p class="journal">Research Policy <span>(FT50)</span></p>
-                        <span class="year">2015</span>
-                    </div>
-                </div>
+            <div class="home-cta">
+                <a class="btn btn--brand" href="/news.html">소식 전체 보기</a>
             </div>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <div class="footer-content">
-            <h2>디지털혁신 및 기술경영 연구실</h2>
-            <div class="footer-contact">
-                <p>연세대학교 정보대학원</p>
-                <p>서울특별시 서대문구 연세로 50 연세대학교 새천년관 우 : 03722</p>
-                <p>Tel: 02-2123-4532 | Email: <a href="mailto:namil.kim@yonsei.ac.kr" style="color: var(--light-text);">namil.kim@yonsei.ac.kr</a></p>
-            </div>
-            <div class="footer-links">
-                <a href="#about">소개</a>
-                <a href="#professor">교수진</a> 
-                <a href="#members">연구원</a>
-                <a href="#publications">논문</a>
-            </div>
-            <p class="copyright">&copy; 2025 디지털혁신 및 기술경영 연구실. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Navigation toggle for mobile
-        const navToggle = document.querySelector('.nav-toggle');
-        const nav = document.querySelector('nav');
-        const navLinks = document.querySelectorAll('nav a'); // Select links within nav
-
-        navToggle.addEventListener('click', () => {
-            const isExpanded = nav.classList.toggle('active');
-            navToggle.setAttribute('aria-expanded', isExpanded); // Update ARIA attribute
-        });
-
-        // Close navigation when clicking on links (for mobile view)
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    navToggle.setAttribute('aria-expanded', 'false'); // Update ARIA attribute
-                }
-            });
-        });
-
-        // Optional: Close nav if clicking outside of it
-        document.addEventListener('click', (event) => {
-            const isClickInsideNav = nav.contains(event.target);
-            const isClickOnToggle = navToggle.contains(event.target);
-
-            if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-    </script>
-</body>
-</html>
+        {% else %}
+            <p class="lead" style="margin-top: var(--space-6);">아직 등록된 소식이 없습니다.</p>
+        {% endif %}
+    </div>
+</section>

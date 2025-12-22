@@ -1,0 +1,94 @@
+# Publications data
+# Fields:
+# - title (required)
+# - authors
+# - venue
+# - year (number)
+# - note (e.g., FT50, UTD24)
+# - featured (optional boolean; 대표논문)
+# - url (optional)
+
+- title: "Anti-labor environments and employee entrepreneurship: Evidence from right-to-work laws"
+  authors: "Daehyun Kim, Namil Kim*, and Haemin Dennis Park"
+  venue: "Strategic Entrepreneurship Journal"
+  year: 2025
+  note: "FT50"
+  tags: ["TM"]
+  url: https://doi.org/10.1002/sej.70006
+  student_involved: false
+  featured: true
+
+- title: "How digital platforms affect local entrepreneurial activities: Evidence from the staggered entry of craigslist"
+  authors: "Daehyun Kim, Yongwook Paik, and Namil Kim*"
+  venue: "Strategic Entrepreneurship Journal"
+  year: 2025
+  note: "FT50"
+  tags: ["DT", "TM"]
+  url: https://doi.org/10.1002/sej.1538
+  student_involved: false
+  featured: true
+
+- title: "How does artificial intelligence improve human decision-making? Evidence from the AI-powered Go program"
+  authors: "Sukwoong Choi, Hyo Kang, Namil Kim*, and Junsik Kim"
+  venue: "Strategic Management Journal"
+  year: 2025
+  note: "UTD24, FT50"
+  tags: ["AI"]
+  url: https://doi.org/10.1002/smj.3694
+  student_involved: false
+  featured: true
+
+
+- title: "Connecting the dots between democracy and innovation: The mediating role of economic freedom and press freedom"
+  authors: "Hyungseok Yoon, Christopher Boudreaux, and Namil Kim*"
+  venue: "Research Policy"
+  year: 2024
+  note: "FT50"
+  tags: ["DT", "TM"]
+  student_involved: false
+  featured: true
+
+
+- title: "Climate impact, institutional context, and national climate change adaptation IP protection rates"
+  authors: "Hyungseok Yoon*, Peter Tashman, Mirko Benischke, Jonathan Doh, and Namil Kim"
+  venue: "Journal of Business Venturing"
+  year: 2024
+  note: "FT50"
+  tags: ["DT"]
+  student_involved: false
+  featured: true
+
+
+- title: "Dynamic patterns of industry convergence: Evidence from a large amount of unstructured data"
+  authors: "Namil Kim, Hyeokseong Lee, Wonjoon Kim*, Hyunjong Lee, and Jong Hwan Suh"
+  venue: "Research Policy"
+  year: 2015
+  note: "FT50"
+  tags: ["DT", "AI"]
+  student_involved: false
+  featured: true
+
+
+- title: "Unpacking digital servitization and firm performance in B2B manufacturing: Evidence from US firms"
+  authors: "Kiho Kwak, Namil Kim, and Haneul Lee*"
+  venue: "Technovation"
+  year: 2026
+  tags: ["DT", "TM"]
+  student_involved: false
+  featured: false
+
+- title: "생성형 AI 도입 이후 Q&A 플랫폼 사용자 질문 행태 변화 : 도구적(Utilitarian) 키워드 중심으로"
+  authors: "심해원, 김남일"
+  venue: "경영정보학연구"
+  year: 2025
+  tags: ["DT", "AI"]
+  student_involved: true
+  featured: false
+
+- title: "AI 에이전트 서비스 개편에 따른 사용자 인식 변화: 감성 및 토픽 기반 시계열 영향 분석"
+  authors: "이하람, 김남일"
+  venue: "인터넷전자상거래연구"
+  year: 2025
+  tags: ["DT", "AI"]
+  student_involved: true
+  featured: false

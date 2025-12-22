@@ -1,0 +1,11 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3F4F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E5E7EB;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#grad)"/>
+  <path d="M100 115C122.091 115 140 97.0914 140 75C140 52.9086 122.091 35 100 35C77.9086 35 60 52.9086 60 75C60 97.0914 77.9086 115 100 115Z" fill="#9CA3AF"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M100 125C68.9086 125 42.0673 142.131 30.1226 167.632C33.7437 178.508 41.5173 189.92 50.8447 195.918C65.558 205.378 82.5276 205.289 100 205.289C117.472 205.289 134.442 205.378 149.155 195.918C158.483 189.92 166.256 178.508 169.877 167.632C157.933 142.131 131.091 125 100 125Z" fill="#9CA3AF"/>
+</svg>

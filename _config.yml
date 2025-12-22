@@ -1,0 +1,16 @@
+title: DITM Lab
+baseurl: ""
+url: ""
+markdown: kramdown
+permalink: pretty
+
+# Discourage indexing/crawling (search engines).
+# You can override per-page via front matter: noindex: false
+noindex: true
+
+exclude:
+  - MAINTENANCE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

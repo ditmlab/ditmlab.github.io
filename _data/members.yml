@@ -1,0 +1,37 @@
+current:
+  phd:
+    - id: "sim-haewon"
+      name_ko: "심해원"
+      role: "Ph.D. Student"
+      photo: "/assets/img/avatar-placeholder.svg"
+      tags:
+        - "Digital Transformation"
+        - "AI Management"
+      achievements:
+        - year: 2025
+          type: "Paper"
+          title: "생성형 AI 도입 이후 Q&A 플랫폼 사용자 질문 행태 변화 : 도구적(Utilitarian) 키워드 중심으로"
+          journal: "경영정보학연구"
+          indexes: ["KCI"]
+          note: "(주)영립원소프트랩 최우수 논문상 수상"
+          url: "https://dx.doi.org/10.14329/isr.2025.27.4.443"
+
+  ms:
+    - id: "lee-haram"
+      name_ko: "이하람"
+      role: "M.S. Student"
+      photo: "/assets/img/avatar-placeholder.svg"
+      tags:
+        - "Technology Management"
+        - "Innovation"
+      achievements:
+        - year: 2025
+          type: "Paper"
+          title: "AI 에이전트 서비스 개편에 따른 사용자 인식 변화: 감성 및 토픽 기반 시계열 영향 분석"
+          journal: "인터넷전자상거래연구"
+          indexes: ["KCI"]
+          url: "https://doi.org/10.37272/JIECR.2025.8.25.4.79"
+
+  visiting: []
+
+alumni: []

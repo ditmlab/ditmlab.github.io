@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Note: This blocks compliant crawlers from accessing any pages.
+# It does not prevent direct access by users.

@@ -1,0 +1,43 @@
+---
+layout: default
+title: 소식
+description: DITM Lab의 주요 소식, 수상, 공지사항을 확인하세요.
+permalink: /news.html
+---
+
+<section class="page-hero">
+  <div class="container">
+    <h1>소식</h1>
+    <p>연구실의 주요 소식, 수상, 공지사항을 확인하세요.</p>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    {% if site.posts and site.posts.size > 0 %}
+    <div class="post-grid" aria-label="소식 목록">
+      {% for post in site.posts %}
+      <article class="post-item">
+        <div class="post-item-top">
+          <h2 class="post-item-title"><a class="inline-link" href="{{ post.url }}">{{ post.title }}</a></h2>
+          <div class="post-right">
+            {% assign is_award = false %}
+            {% if post.categories contains 'award' %}{% assign is_award = true %}{% endif %}
+            {% if post.tags contains 'award' %}{% assign is_award = true %}{% endif %}
+            {% if is_award %}<span class="post-badge post-badge--award">Award</span>{% endif %}
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          </div>
+        </div>
+        {% if post.summary %}
+        <p class="post-excerpt">{{ post.summary | strip_html | strip_newlines | truncate: 180 }}</p>
+        {% elsif post.excerpt %}
+        <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="lead">아직 등록된 소식이 없습니다.</p>
+    {% endif %}
+  </div>
+</section>
