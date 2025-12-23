@@ -151,6 +151,12 @@
   font-weight: 850;
 }
 
+.pub-tag--student {
+  border-color: rgba(16, 185, 129, 0.35);
+  background: #F0FDF4;
+  color: #065F46;
+}
+
 .pub-badge {
   display: inline-flex;
   align-items: center;
