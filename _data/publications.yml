@@ -38,6 +38,22 @@
   student_involved: false
   featured: true
 
+- title: "The dual edges of AI: Advancing knowledge while reducing diversity"
+  authors: "Sukwoong Choi, Hyo Kang, Namil Kim*, and Junsik Kim"
+  venue: "PNAS Nexus"
+  year: 2025
+  tags: ["AI"]
+  student_involved: false
+  featured: false
+
+- title: "Is SME performance enhanced by preferential government policies? Evidence from the small-scale reservation industry policy in Korea"
+  authors: "Namil Kim and Kiho Kwak*"
+  venue: "Applied Economics Letters"
+  year: 2025
+  tags: ["TM"]
+  student_involved: false
+  featured: false
+
 
 - title: "Connecting the dots between democracy and innovation: The mediating role of economic freedom and press freedom"
   authors: "Hyungseok Yoon, Christopher Boudreaux, and Namil Kim*"
@@ -47,6 +63,14 @@
   tags: ["DT", "TM"]
   student_involved: false
   featured: true
+
+- title: "Do political events have an impact on stock indices? Empirical research on emerging countries"
+  authors: "Yonghyun Kwon and Namil Kim*"
+  venue: "Applied Economics Letters"
+  year: 2024
+  tags: ["TM"]
+  student_involved: false
+  featured: false
 
 
 - title: "Climate impact, institutional context, and national climate change adaptation IP protection rates"
@@ -74,6 +98,86 @@
   venue: "Technovation"
   year: 2026
   tags: ["DT", "TM"]
+  student_involved: false
+  featured: false
+
+- title: "Industrial leadership changes without technological discontinuity: modularization, institution-led market discontinuity, and market development strategy"
+  authors: "Kiho Kwak and Namil Kim*"
+  venue: "Technological Forecasting and Social Change"
+  year: 2022
+  tags: ["TM"]
+  student_involved: false
+  featured: false
+
+- title: "International alliance formations: The role of brokerage in technology competition networks"
+  authors: "Sukwoong Choi, Wonjoon Kim, and Namil Kim*"
+  venue: "Journal of Business Research"
+  year: 2022
+  tags: ["TM"]
+  student_involved: false
+  featured: false
+
+- title: "Concentrate or disperse? The relationship between major customer concentration and supplier profitability and the moderating role of insider ownership"
+  authors: "Kiho Kwak and Namil Kim*"
+  venue: "Journal of Business Research"
+  year: 2020
+  tags: ["TM"]
+  student_involved: false
+  featured: false
+
+- title: "Are social entrepreneurs more risk-averse?"
+  authors: "Sukwoong Choi, Namil Kim, and Wonjoon Kim*"
+  venue: "Applied Economics Letters"
+  year: 2019
+  tags: ["TM"]
+  student_involved: false
+  featured: false
+
+- title: "A cross-national study of knowledge, government intervention, and innovative nascent entrepreneurship"
+  authors: "Hyungseok Yoon*, Namil Kim, Bernard Buisson, and Fred Phillips"
+  venue: "Journal of Business Research"
+  year: 2018
+  tags: ["TM"]
+  student_involved: false
+  featured: false
+
+- title: "Do your social media lead you to make social deal purchases? Consumer-generated social referrals for sales via social commerce"
+  authors: "Namil Kim and Wonjoon Kim*"
+  venue: "International Journal of Information Management"
+  year: 2018
+  tags: ["DT"]
+  student_involved: false
+  featured: false
+
+- title: "A Study on Substitutability and Complementarity of Music Downloading and Streaming and the Moderating Role of LTE Penetration on Its Relationship"
+  authors: "허경석, 최석웅, 김남일*, 김원준"
+  venue: "한국콘텐츠학회논문지"
+  year: 2018
+  tags: ["DT"]
+  student_involved: false
+  featured: false
+
+- title: "The Effect of Alliance Activity on Patent Litigation: In the Case of Printed Electronics: In the Case of Printed Electronics"
+  authors: "강민정, 유재원, 김원준*, 김남일"
+  venue: "기술혁신학회지"
+  year: 2018
+  tags: ["TM"]
+  student_involved: false
+  featured: false
+
+- title: "Learning from Others' Failure and Successful Innovation in Entrepreneurship: Evidence from France"
+  authors: "Carole Hascoet,  김남일,  김원준,  강재원*"
+  venue: "기업가정신과 벤처연구"
+  year: 2018
+  tags: ["TM"]
+  student_involved: false
+  featured: false
+
+- title: "The effect of patent protection on firms’ market value: The case of the renewable energy sector"
+  authors: "Daehyun Kim, Namil Kim, and Wonjoon Kim*"
+  venue: "Renewable and Sustainable Energy Reviews"
+  year: 2018
+  tags: ["TM"]
   student_involved: false
   featured: false
 
