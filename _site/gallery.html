@@ -22,11 +22,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=1766380822" />
+  <link rel="stylesheet" href="/assets/css/base.css?v=1766466181" />
+  <link rel="stylesheet" href="/assets/css/hero-home.css?v=1766466181" />
+  <link rel="stylesheet" href="/assets/css/components.css?v=1766466181" />
+  <link rel="stylesheet" href="/assets/css/pages.css?v=1766466181" />
 </head>
 
 
-<body class="is-subpage">
+<body class="is-subpage gallery-page">
   <a class="skip-link" href="#main">본문으로 바로가기</a>
 
   <header class="site-header" role="banner">
@@ -82,27 +85,15 @@
     
     <div class="gallery-grid" aria-label="사진 목록">
       
-      <a class="gallery-item js-gallery-open" href="/assets/img/blank_pic.jpg" data-gallery-index="0"
+      <a class="gallery-item js-gallery-open" href="/assets/img/gallery/gsi_25th_1.jpeg" data-gallery-index="0"
         data-no-save>
         <div class="gallery-thumb" aria-hidden="true">
-          <img class="no-save" src="/assets/img/blank_pic.jpg" alt="" loading="lazy" draggable="false" />
+          <img class="no-save" src="/assets/img/gallery/gsi_25th_1.jpeg" alt="" loading="lazy" draggable="false" />
         </div>
         <div class="gallery-meta">
-          <div class="gallery-title">(예시) 연구실 세미나</div>
+          <div class="gallery-title">정보대학원 25주년 기념행사 2부</div>
           <div class="gallery-date">2025-12-01</div>
-          <div class="gallery-caption">세미나 현장 사진 (예시)</div>
-        </div>
-      </a>
-      
-      <a class="gallery-item js-gallery-open" href="/assets/img/blank_pic.jpg" data-gallery-index="1"
-        data-no-save>
-        <div class="gallery-thumb" aria-hidden="true">
-          <img class="no-save" src="/assets/img/blank_pic.jpg" alt="" loading="lazy" draggable="false" />
-        </div>
-        <div class="gallery-meta">
-          <div class="gallery-title">(예시) 워크샵</div>
-          <div class="gallery-date">2025-11-15</div>
-          <div class="gallery-caption">워크샵 단체 사진 (예시)</div>
+          <div class="gallery-caption">정보대학원 25주년 기념행사 2부</div>
         </div>
       </a>
       
@@ -112,7 +103,7 @@
 </section>
 
 <script>
-  window.__ditmGallery = [{"title":"(예시) 연구실 세미나","date":"2025-12-01","image":"/assets/img/blank_pic.jpg","caption":"세미나 현장 사진 (예시)"},{"title":"(예시) 워크샵","date":"2025-11-15","image":"/assets/img/blank_pic.jpg","caption":"워크샵 단체 사진 (예시)"}];
+  window.__ditmGallery = [{"title":"정보대학원 25주년 기념행사 2부","date":"2025-12-01","image":"/assets/img/gallery/gsi_25th_1.jpeg","caption":"정보대학원 25주년 기념행사 2부"}];
 </script>
 
 <div class="modal-backdrop" data-gallery-modal-backdrop hidden></div>
@@ -130,9 +121,9 @@
         <p class="gallery-caption" data-gallery-modal-caption></p>
 
         <div class="gallery-modal-actions">
-          <button class="person-more" type="button" data-gallery-prev>이전</button>
-          <button class="person-more" type="button" data-gallery-next>다음</button>
-          <a class="person-more" data-gallery-open-original href="#" target="_blank" rel="noopener noreferrer">원본 열기</a>
+          <button class="person-more gallery-nav-btn" type="button" data-gallery-prev>이전</button>
+          <button class="person-more gallery-nav-btn" type="button" data-gallery-next>다음</button>
+          <a class="person-more gallery-open-original" data-gallery-open-original href="#" target="_blank" rel="noopener noreferrer">원본 열기</a>
         </div>
       </div>
     </div>
@@ -165,6 +156,6 @@
 </footer>
 
 
-  <script src="/assets/js/main.js?v=1766380822" defer></script>
+  <script src="/assets/js/main.js?v=1766466181" defer></script>
 </body>
 </html>

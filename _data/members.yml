@@ -22,8 +22,8 @@ current:
       role: "M.S. Student"
       photo: "/assets/img/avatar-placeholder.svg"
       tags:
-        - "Technology Management"
-        - "Innovation"
+        - "Human–AI Interaction"
+        - "Trust and Reliance on AI Systems"
       achievements:
         - year: 2025
           type: "Paper"

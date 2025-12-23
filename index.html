@@ -7,7 +7,7 @@ permalink: /index.html
 
 <section class="hero" id="home">
     <div class="hero-media" aria-hidden="true">
-        <video autoplay muted loop playsinline preload="auto" poster="/assets/img/avatar-placeholder.svg">
+        <video autoplay muted loop playsinline preload="auto" poster="/assets/img/hero-poster.svg">
             <source src="/assets/video/building.mp4" type="video/mp4">
         </video>
     </div>
@@ -71,35 +71,6 @@ permalink: /index.html
                 </ul>
             </aside>
         </div>
-    </div>
-</section>
-
-<section class="section section--alt" aria-label="최근 논문">
-    <div class="container">
-        <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Latest</div>
-        <h2 class="h2">최근 논문</h2>
-        <p class="lead">최신 성과를 빠르게 확인할 수 있습니다.</p>
-
-        {% if site.data.publications %}
-            {% assign pubs_sorted = site.data.publications | sort: "year" | reverse %}
-            <div class="pub-list" style="margin-top: var(--space-6);">
-                {% for p in pubs_sorted limit: 3 %}
-                    <article class="pub-item">
-                        <div class="pub-top">
-                            <h3 class="pub-title">{% if p.url %}<a class="inline-link" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
-                            <span class="year">{{ p.year }}</span>
-                        </div>
-                        {% if p.authors %}<p class="pub-meta">{{ p.authors }}</p>{% endif %}
-                        {% if p.venue %}<p class="pub-journal">{{ p.venue }}{% if p.note %} <span class="pub-note">({{ p.note }})</span>{% endif %}</p>{% endif %}
-                    </article>
-                {% endfor %}
-            </div>
-            <div class="home-cta">
-                <a class="btn btn--brand" href="/publications.html">전체 논문 보기</a>
-            </div>
-        {% else %}
-            <p class="lead" style="margin-top: var(--space-6);">논문 데이터가 아직 준비되지 않았습니다.</p>
-        {% endif %}
     </div>
 </section>
 

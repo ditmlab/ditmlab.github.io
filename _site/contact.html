@@ -22,11 +22,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=1766380822" />
+  <link rel="stylesheet" href="/assets/css/base.css?v=1766466181" />
+  <link rel="stylesheet" href="/assets/css/hero-home.css?v=1766466181" />
+  <link rel="stylesheet" href="/assets/css/components.css?v=1766466181" />
+  <link rel="stylesheet" href="/assets/css/pages.css?v=1766466181" />
 </head>
 
 
-<body class="is-subpage">
+<body class="is-subpage contact-page">
   <a class="skip-link" href="#main">본문으로 바로가기</a>
 
   <header class="site-header" role="banner">
@@ -79,22 +82,116 @@
 
 <section class="section">
   <div class="container">
-    <div class="grid" aria-label="연락처 정보">
-      <div class="card">
-        <h2 class="card-title">주소</h2>
-        <p class="card-text">서울특별시 서대문구 연세로 50 연세대학교 새천년관 우 : 03722</p>
-        <p class="card-text" style="margin-top:10px;">학생연구실: B119-2호 · 교수 연구실: 421호</p>
+    <div class="contact-shell" aria-label="연락처 정보">
+      <div class="contact-grid">
+        <!-- Address takes full width -->
+        <section class="contact-card contact-card--full" aria-label="주소">
+          <h2 class="contact-card-title">주소</h2>
+          <p class="contact-card-text">서울특별시 서대문구 연세로 50 연세대학교 새천년관 (우: 03722)</p>
+          <p class="contact-card-text" style="margin-top:10px;">학생연구실: B119-2호 · 교수 연구실: 421호</p>
+        </section>
+
+        <!-- Phone and Email take half width each -->
+        <section class="contact-card" aria-label="전화">
+          <h2 class="contact-card-title">전화</h2>
+          <p class="contact-card-text">02-2123-4532</p>
+        </section>
+        <section class="contact-card" aria-label="이메일">
+          <h2 class="contact-card-title">이메일</h2>
+          <p class="contact-card-text"><a class="inline-link"
+              href="mailto:namil.kim@yonsei.ac.kr">namil.kim@yonsei.ac.kr</a></p>
+        </section>
       </div>
-      <div class="card">
-        <h2 class="card-title">전화</h2>
-        <p class="card-text">02-2123-4532</p>
-      </div>
-      <div class="card">
-        <h2 class="card-title">이메일</h2>
-        <p class="card-text"><a class="inline-link" href="mailto:namil.kim@yonsei.ac.kr">namil.kim@yonsei.ac.kr</a></p>
+    </div>
+
+    <div class="map-section">
+      <h2 class="section-label">오시는 길</h2>
+      <div class="map-container">
+        <!-- 1. 지도 노드 -->
+        <div id="daumRoughmapContainer1766465109995" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+        <!-- 2. 설치 스크립트 -->
+        <script charset="UTF-8" class="daum_roughmap_loader_script"
+          src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+        <!-- 3. 실행 스크립트 -->
+        <script charset="UTF-8">
+          new daum.roughmap.Lander({
+            "timestamp": "1766465109995",
+            "key": "ed7mvbose96",
+            "mapWidth": "640",
+            "mapHeight": "360"
+          }).render();
+        </script>
       </div>
     </div>
   </div>
+
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 720px) {
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-card--full {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .map-section {
+      margin-top: 40px;
+      /* Removed border-top and padding-top as requested */
+    }
+
+    .map-container {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      /* Center the Kakao map inside */
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      /* Try to hide bottom info by masking height if possible */
+      height: 360px;
+      position: relative;
+    }
+
+    /* Make Kakao map responsive */
+    .root_daum_roughmap {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .root_daum_roughmap .wrap_map {
+      height: 360px !important;
+    }
+
+    /* Attempt to hide the bottom info box specifically targeting Daum structure */
+    .root_daum_roughmap .wrap_controllers {
+      display: none !important;
+      /* This often hides zoom controls, check if info is here */
+    }
+
+    /* Common class for info part */
+    .root_daum_roughmap .roughmap_maker_label,
+    .root_daum_roughmap .wrap_map_info {
+      display: none !important;
+    }
+
+    /* Ensure section-label styling matches if not applied by global css */
+    .section-label {
+      margin-bottom: 20px;
+      /* Inherits from base.css but ensuring spacing */
+    }
+  </style>
 </section>
   </main>
 
@@ -123,6 +220,6 @@
 </footer>
 
 
-  <script src="/assets/js/main.js?v=1766380822" defer></script>
+  <script src="/assets/js/main.js?v=1766466181" defer></script>
 </body>
 </html>

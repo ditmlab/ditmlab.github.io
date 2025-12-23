@@ -10,7 +10,8 @@ permalink: /professor.html
 <section class="page-hero">
   <div class="container">
     <div class="page-label">교수</div>
-    <h1>{{ pi.name_ko }}{% if pi.name_en %} <span style="color:var(--muted-2); font-weight:700;">({{ pi.name_en }})</span>{% endif %}</h1>
+    <h1>{{ pi.name_ko }}{% if pi.name_en %} <span style="color:var(--muted-2); font-weight:700;">({{ pi.name_en
+        }})</span>{% endif %}</h1>
     <p>{{ pi.title | default: 'Professor' }}{% if pi.affiliation %} · {{ pi.affiliation }}{% endif %}</p>
   </div>
 </section>
@@ -20,15 +21,24 @@ permalink: /professor.html
     <div class="prof-grid">
       <div class="prof-photo">
         <div data-no-save>
-          <img class="no-save" src="{{ pi.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="{{ pi.name_ko }} 교수 사진" loading="lazy" draggable="false" />
+          <img class="no-save" src="{{ pi.photo | default: '/assets/img/avatar-placeholder.svg' }}"
+            alt="{{ pi.name_ko }} 교수 사진" loading="lazy" draggable="false" />
         </div>
       </div>
       <div class="prof-box">
         <h2 class="prof-name">{{ pi.name_ko }}</h2>
-        <p class="lead" style="margin-top:0;">{{ pi.interests }}</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
+          {% assign interests = pi.interests | split: ',' %}
+          {% for t in interests %}
+          <span class="tag">{{ t | strip }}</span>
+          {% endfor %}
+        </div>
         <ul class="kv">
-          {% if pi.website %}<li><strong>홈페이지</strong> · <a class="inline-link" href="{{ pi.website }}" target="_blank" rel="noopener noreferrer">{{ pi.website | replace: 'https://', '' | replace: 'http://', '' }}</a></li>{% endif %}
-          {% if pi.email %}<li><strong>연락처</strong> · <a class="inline-link" href="mailto:{{ pi.email }}">{{ pi.email }}</a></li>{% endif %}
+          {% if pi.website %}<li><strong>홈페이지</strong> · <a class="inline-link" href="{{ pi.website }}" target="_blank"
+              rel="noopener noreferrer">{{ pi.website | replace: 'https://', '' | replace: 'http://', '' }}</a></li>{%
+          endif %}
+          {% if pi.email %}<li><strong>연락처</strong> · <a class="inline-link" href="mailto:{{ pi.email }}">{{ pi.email
+              }}</a></li>{% endif %}
           {% if pi.office %}<li><strong>교수 연구실</strong> · {{ pi.office }}</li>{% endif %}
         </ul>
 
@@ -51,8 +61,8 @@ permalink: /professor.html
         {% assign interests = pi.interests | default: '' | split: ',' %}
         <div style="display:flex; flex-wrap:wrap; gap:10px;">
           {% for t in interests %}
-            {% assign tag = t | strip %}
-            {% if tag != '' %}<span class="tag">{{ tag }}</span>{% endif %}
+          {% assign tag = t | strip %}
+          {% if tag != '' %}<span class="tag">{{ tag }}</span>{% endif %}
           {% endfor %}
         </div>
       </div>
@@ -60,8 +70,11 @@ permalink: /professor.html
       <div class="card">
         <h3 class="card-title">연락처</h3>
         <ul class="kv" style="margin-top: 10px;">
-          {% if pi.email %}<li><strong>Email</strong> · <a class="inline-link" href="mailto:{{ pi.email }}">{{ pi.email }}</a></li>{% endif %}
-          {% if pi.website %}<li><strong>Website</strong> · <a class="inline-link" href="{{ pi.website }}" target="_blank" rel="noopener noreferrer">{{ pi.website | replace: 'https://', '' | replace: 'http://', '' }}</a></li>{% endif %}
+          {% if pi.email %}<li><strong>Email</strong> · <a class="inline-link" href="mailto:{{ pi.email }}">{{ pi.email
+              }}</a></li>{% endif %}
+          {% if pi.website %}<li><strong>Website</strong> · <a class="inline-link" href="{{ pi.website }}"
+              target="_blank" rel="noopener noreferrer">{{ pi.website | replace: 'https://', '' | replace: 'http://', ''
+              }}</a></li>{% endif %}
         </ul>
       </div>
 
@@ -81,8 +94,8 @@ permalink: /professor.html
     <div class="card" style="margin-top: var(--space-6);">
       <ul class="modal-list" style="margin:0; padding-left: 18px;">
         {% for c in career_items %}
-          {% assign item = c | strip %}
-          {% if item != '' %}<li>{{ item }}</li>{% endif %}
+        {% assign item = c | strip %}
+        {% if item != '' %}<li>{{ item }}</li>{% endif %}
         {% endfor %}
       </ul>
     </div>
