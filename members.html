@@ -27,7 +27,12 @@ body_class: members-page
       <div class="prof-box">
         <h2 class="prof-name">{{ pi.name_ko }} <span style="color:var(--muted-2); font-weight:700;">({{ pi.name_en
             }})</span></h2>
-        <p class="lead" style="margin-top:0;">{{ pi.interests }}</p>
+        {% assign pi_interests = pi.interests | split: ',' %}
+        {% if pi_interests and pi_interests.size > 0 %}
+        <div class="person-tags" aria-label="연구 키워드" style="margin-top: 10px;">
+          {% for t in pi_interests %}<span class="tag">{{ t | strip }}</span>{% endfor %}
+        </div>
+        {% endif %}
         <ul class="kv">
           {% if pi.website %}<li><strong>홈페이지</strong> · <a class="inline-link" href="{{ pi.website }}" target="_blank"
               rel="noopener noreferrer">{{ pi.website | replace: 'https://', '' | replace: 'http://', '' }}</a></li>{%
