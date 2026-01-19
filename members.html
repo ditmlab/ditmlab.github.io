@@ -53,6 +53,7 @@ body_class: members-page
   <div class="container">
     <h2 class="h2" style="margin-top: 12px;">재학생</h2>
     <p class="lead">박사과정, 석사과정, 졸업생 구성원을 소개합니다.</p>
+    <p style="margin-top:8px; color: var(--muted-2);">이메일 표기에서 <strong>@연세이메일</strong>을 <strong>@yonsei.ac.kr</strong>로 바꿔주세요.</p>
 
     {% assign current = site.data.members.current %}
 
@@ -76,6 +77,14 @@ body_class: members-page
               <div class="person-tags" aria-label="연구 키워드">
                 {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
               </div>
+              {% endif %}
+              {% if m.email_id %}
+              {% assign email_id = m.email_id | strip %}
+              {% if email_id != '' %}
+              <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
+                {{ email_id }}@연세이메일
+              </div>
+              {% endif %}
               {% endif %}
               <div class="person-actions">
                 {% if m.achievements and m.achievements.size > 0 %}
@@ -107,6 +116,14 @@ body_class: members-page
               <div class="person-tags" aria-label="연구 키워드">
                 {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
               </div>
+              {% endif %}
+              {% if m.email_id %}
+              {% assign email_id = m.email_id | strip %}
+              {% if email_id != '' %}
+              <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
+                {{ email_id }}@연세이메일
+              </div>
+              {% endif %}
               {% endif %}
               <div class="person-actions">
                 {% if m.achievements and m.achievements.size > 0 %}
@@ -145,6 +162,14 @@ body_class: members-page
               <div class="person-tags" aria-label="연구 키워드">
                 {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
               </div>
+              {% endif %}
+              {% if m.email_id %}
+              {% assign email_id = m.email_id | strip %}
+              {% if email_id != '' %}
+              <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
+                {{ email_id }}@연세이메일
+              </div>
+              {% endif %}
               {% endif %}
               <div class="person-actions">
                 {% if m.achievements and m.achievements.size > 0 %}

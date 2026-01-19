@@ -1,6 +1,7 @@
 current:
   phd:
     - id: "sim-haewon"
+      email_id: "haewon.sim"
       name_ko: "심해원"
       role: "Ph.D. Student"
       photo: "/assets/img/avatar-placeholder.svg"
@@ -18,6 +19,8 @@ current:
 
   ms:
     - id: "lee-haram"
+      # 표시용 이메일 ID (예: abc123). 비워두면 id 값을 사용합니다.
+      email_id: "haram"
       name_ko: "이하람"
       role: "M.S. Student"
       photo: "/assets/img/avatar-placeholder.svg"

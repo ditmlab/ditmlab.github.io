@@ -45,8 +45,30 @@ body_class: publications-page
     <section class="pub-featured" aria-label="대표 논문">
       <h2 class="h2 h2--tight">대표 논문</h2>
 
+      {% assign featured_utd24 = "" | split: "" %}
+      {% assign featured_other = "" | split: "" %}
+      {% for p in featured %}
+      {% assign has_utd24 = false %}
+      {% if p.note %}
+      {% assign _note_u = p.note | upcase %}
+      {% if _note_u contains 'UTD24' %}{% assign has_utd24 = true %}{% endif %}
+      {% endif %}
+      {% if has_utd24 == false and p.tags and p.tags.size > 0 %}
+      {% for _t in p.tags %}
+      {% assign _tu = _t | upcase %}
+      {% if _tu == 'UTD24' %}{% assign has_utd24 = true %}{% endif %}
+      {% endfor %}
+      {% endif %}
+      {% if has_utd24 %}
+      {% assign featured_utd24 = featured_utd24 | push: p %}
+      {% else %}
+      {% assign featured_other = featured_other | push: p %}
+      {% endif %}
+      {% endfor %}
+      {% assign featured_ordered = featured_utd24 | concat: featured_other %}
+
       <div class="pub-list">
-        {% for p in featured %}
+        {% for p in featured_ordered %}
         <article class="pub-item pub-item--featured">
           <div class="pub-top">
             <h3 class="pub-title">{% if p.url %}<a class="inline-link" href="{{ p.url }}" target="_blank"
