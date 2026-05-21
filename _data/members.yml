@@ -4,10 +4,11 @@ current:
       email_id: "haewon.sim"
       name_ko: "심해원"
       role: "PhD Student"
-      photo: "/assets/img/avatar-placeholder.svg"
+      photo: "/assets/img/haewon_profile.jpeg"
       tags:
-        - "Digital Transformation"
-        - "AI Management"
+        - "AI Governance"
+        - "Human-AI Collaboration"
+        - "Agentic AI"
       achievements:
         - year: 2025
           type: "Paper"
@@ -18,19 +19,25 @@ current:
           url: "https://dx.doi.org/10.14329/isr.2025.27.4.443"
 
   ms:
-    - id: "sim-haewon"
+    - id: "kim-soobin"
+      email_id: "soo"
       name_ko: "김수빈"
       role: "MS Student"
-      photo: "/assets/img/avatar-placeholder.svg"
+      photo: "/assets/img/soobin_profile.jpeg"
       tags:
         - "AI Management"
+        - "Digital Business"
+        - "Customer Behavior"
 
     - id: "park-juwon"
+      email_id: "gabrielpark0701"
       name_ko: "박주원"
       role: "MS Student"
       photo: "/assets/img/avatar-placeholder.svg"
       tags:
-        - "AI Management"
+        - "Agentic AI & Automation"
+        - "Human-AI Collaboration"
+        - "Digital Innovation in Finance"
 
     - id: "oh-yena"
       name_ko: "오예나"
@@ -45,7 +52,9 @@ current:
       name_ko: "Zhengfu Wang"
       from: "Harbin Institute of Technology"
       role: "Visiting PhD Student"
-      photo: "/assets/img/avatar-placeholder.svg"
+      photo: "/assets/img/zhengfu_profile.jpeg"
+      tags:
+      - "Strategy and Innovation"
 
 
 alumni: 
