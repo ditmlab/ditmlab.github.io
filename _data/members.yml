@@ -6,7 +6,7 @@ current:
       role: "PhD Student"
       photo: "/assets/img/haewon_profile.jpeg"
       tags:
-        - "AI Governance"
+        - "AI & Human Decision-Making"
         - "Human-AI Collaboration"
         - "Agentic AI"
       achievements:
@@ -40,11 +40,16 @@ current:
         - "Digital Innovation in Finance"
 
     - id: "oh-yena"
+      email_id: "yenaoh"
       name_ko: "오예나"
       role: "MS Student"
-      photo: "/assets/img/avatar-placeholder.svg"
+      photo: "/assets/img/yena_profile.jpeg"
       tags:
-        - "AI Management"
+        - "AI & Digital Transformation"
+        - "Digital Business Strategy"
+        - "E-commerce Platform"
+        - "Cloud & Digital Infrastructure"
+        - "UX/UI & Digital Service Planning"
 
   visiting:
     - id: "wang-zhengfu"
