@@ -1,0 +1,17 @@
+---
+layout: default
+lang: en
+ko_url: /members.html
+title: People
+description: "Faculty, students, and alumni of DITM Lab."
+permalink: /en/members/
+body_class: members-page
+---
+
+{% assign pi = site.data.pi %}
+<section class="page-hero"><div class="container"><h1>People</h1><p>Meet the faculty, students, visiting researchers, and alumni of DITM Lab.</p></div></section>
+<section class="section section--alt"><div class="container"><div class="section-label">Faculty</div><div class="prof-grid"><div class="prof-photo"><img src="{{ pi.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="{{ pi.name_en }}" loading="lazy"></div><div class="prof-box"><h2 class="prof-name">{{ pi.name_en }}</h2><p class="lead">{{ pi.title }}</p><div class="person-tags">{% assign interests = pi.interests | split: ',' %}{% for interest in interests %}<span class="tag">{{ interest | strip }}</span>{% endfor %}</div><ul class="kv"><li><strong>Email</strong> · <a class="inline-link" href="mailto:{{ pi.email }}">{{ pi.email }}</a></li><li><strong>Office</strong> · {{ pi.office }}</li></ul></div></div></div></section>
+<section class="section"><div class="container">
+  {% assign groups = 'phd,ms,visiting' | split: ',' %}{% for group in groups %}{% assign people = site.data.members.current[group] %}{% if people and people.size > 0 %}<h2 class="h2">{% if group == 'phd' %}PhD Students{% elsif group == 'ms' %}Master's Students{% else %}Visiting Researchers{% endif %}</h2><div class="people-list" role="list">{% for member in people %}<article class="person" role="listitem"><div class="person-avatar"><img src="{{ member.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy"></div><div class="person-main"><div class="person-top"><h3 class="person-name">{{ member.name_en | default: member.name_ko }}</h3><div class="person-right"><span class="person-role">{{ member.role }}</span></div></div>{% if member.from %}<p>{{ member.from }}</p>{% endif %}{% if member.tags %}<div class="person-tags">{% for tag in member.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>{% endif %}</div></article>{% endfor %}</div>{% endif %}{% endfor %}
+  <h2 class="h2" style="margin-top:var(--space-8);">Alumni</h2><div class="people-list" role="list">{% for member in site.data.members.alumni %}<article class="person" role="listitem"><div class="person-avatar"><img src="{{ member.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy"></div><div class="person-main"><div class="person-top"><h3 class="person-name">{{ member.name_en | default: member.name_ko }}</h3><div class="person-right"><span class="person-role">{{ member.role }}</span></div></div></div></article>{% endfor %}</div>
+</div></section>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="{{ page.lang | default: 'ko' }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }} · 디지털혁신 및 기술경영 연구실</title>
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.lang == 'en' %} · Digital Innovation and Technology Management Lab{% else %} · 디지털혁신 및 기술경영 연구실{% endif %}</title>
   {% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
   {% assign _noindex = site.noindex %}
   {% if page.noindex == true %}{% assign _noindex = true %}{% endif %}
@@ -30,7 +30,7 @@
 {% assign _is_home = false %}
 {% if page.url == '/' or page.url == '/index.html' %}{% assign _is_home = true %}{% endif %}
 <body class="{% if _is_home %}is-home{% else %}is-subpage{% endif %}{% if page.body_class %} {{ page.body_class }}{% endif %}">
-  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <a class="skip-link" href="#main">{% if page.lang == 'en' %}Skip to content{% else %}본문으로 바로가기{% endif %}</a>
 
   {% include header.html %}
 

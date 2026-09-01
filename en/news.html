@@ -1,0 +1,11 @@
+---
+layout: default
+lang: en
+ko_url: /news.html
+title: News
+description: "News and updates from DITM Lab."
+permalink: /en/news/
+---
+
+<section class="page-hero"><div class="container"><h1>News</h1><p>Updates, awards, and announcements from DITM Lab.</p></div></section>
+<section class="section section--alt"><div class="container">{% if site.posts and site.posts.size > 0 %}<div class="post-grid" aria-label="News list">{% for post in site.posts %}<article class="post-item"><div class="post-item-top"><h2 class="post-item-title"><a class="inline-link" href="{{ post.url }}">{{ post.title_en | default: post.title }}</a></h2><span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span></div>{% if post.summary_en %}<p class="post-excerpt">{{ post.summary_en }}</p>{% elsif post.summary %}<p class="post-excerpt">{{ post.summary }}</p>{% endif %}</article>{% endfor %}</div>{% else %}<p class="lead">There are no news posts yet.</p>{% endif %}</div></section>

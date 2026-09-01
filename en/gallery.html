@@ -1,0 +1,12 @@
+---
+layout: default
+lang: en
+ko_url: /gallery.html
+title: Gallery
+description: "Photos from DITM Lab activities."
+permalink: /en/gallery/
+body_class: gallery-page
+---
+
+<section class="page-hero"><div class="container"><h1>Gallery</h1><p>Photos from our seminars, meetings, and lab activities.</p></div></section>
+<section class="section section--alt"><div class="container">{% if site.data.gallery and site.data.gallery.size > 0 %}<div class="gallery-grid" aria-label="Gallery photos">{% for item in site.data.gallery %}<a class="gallery-item" href="{{ item.image }}" target="_blank" rel="noopener noreferrer"><div class="gallery-thumb"><img src="{{ item.image }}" alt="{{ item.title_en | default: item.title }}" loading="lazy"></div><div class="gallery-meta"><div class="gallery-title">{{ item.title_en | default: item.title }}</div>{% if item.date %}<div class="gallery-date">{{ item.date }}</div>{% endif %}{% if item.caption_en %}<div class="gallery-caption">{{ item.caption_en }}</div>{% elsif item.caption %}<div class="gallery-caption">{{ item.caption }}</div>{% endif %}</div></a>{% endfor %}</div>{% else %}<p class="lead">There are no photos yet.</p>{% endif %}</div></section>

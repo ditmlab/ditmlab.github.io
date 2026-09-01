@@ -3,6 +3,7 @@ current:
     - id: "sim-haewon"
       email_id: "haewon.sim"
       name_ko: "심해원"
+      name_en: "Haewon Sim"
       role: "PhD Student"
       photo: "/assets/img/haewon_profile.jpeg"
       tags:
@@ -22,6 +23,7 @@ current:
     - id: "kim-soobin"
       email_id: "soo"
       name_ko: "김수빈"
+      name_en: "Soobin Kim"
       role: "MS Student"
       photo: "/assets/img/soobin_profile.jpeg"
       tags:
@@ -32,6 +34,7 @@ current:
     - id: "park-juwon"
       email_id: "gabrielpark0701"
       name_ko: "박주원"
+      name_en: "Juwon Park"
       role: "MS Student"
       photo: "/assets/img/avatar-placeholder.svg"
       tags:
@@ -42,6 +45,7 @@ current:
     - id: "oh-yena"
       email_id: "yenaoh"
       name_ko: "오예나"
+      name_en: "Yena Oh"
       role: "MS Student"
       photo: "/assets/img/yena_profile.jpeg"
       tags:
@@ -55,6 +59,7 @@ current:
     - id: "wang-zhengfu"
       # 표시용 이메일 ID (예: abc123). 비워두면 id 값을 사용합니다.
       name_ko: "Zhengfu Wang"
+      name_en: "Zhengfu Wang"
       from: "Harbin Institute of Technology"
       role: "Visiting PhD Student"
       photo: "/assets/img/zhengfu_profile.jpeg"
@@ -67,6 +72,7 @@ alumni:
       # 표시용 이메일 ID (예: abc123). 비워두면 id 값을 사용합니다.
       email_id: "haram"
       name_ko: "이하람"
+      name_en: "Haram Lee"
       role: "MS Student"
       photo: "/assets/img/avatar-placeholder.svg"
       tags:

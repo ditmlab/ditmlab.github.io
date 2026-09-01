@@ -1,0 +1,12 @@
+---
+layout: default
+lang: en
+ko_url: /publications.html
+title: Publications
+description: "Publications from DITM Lab."
+permalink: /en/publications/
+body_class: publications-page
+---
+
+<section class="page-hero page-hero--compact"><div class="container"><h1>Publications</h1><p>Journal articles and other research publications from DITM Lab.</p></div></section>
+<section class="section section--alt section--compact"><div class="container">{% if site.data.publications %}{% assign years = site.data.publications | map: 'year' | uniq | sort | reverse %}{% for year in years %}<section class="pub-year" aria-label="{{ year }}"><h2 class="pub-year-title">{{ year }}</h2><div class="pub-list">{% assign publications = site.data.publications | where: 'year', year %}{% for publication in publications %}<article class="pub-item"><div class="pub-top"><h3 class="pub-title">{% if publication.url %}<a class="inline-link" href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>{% else %}{{ publication.title }}{% endif %}</h3></div>{% if publication.authors %}<p class="pub-meta">{{ publication.authors }}</p>{% endif %}{% if publication.venue %}<p class="pub-journal">{{ publication.venue }}{% if publication.note %} <span class="pub-note">({{ publication.note }})</span>{% endif %}</p>{% endif %}</article>{% endfor %}</div></section>{% endfor %}{% else %}<p class="lead">Publications will be added soon.</p>{% endif %}</div></section>

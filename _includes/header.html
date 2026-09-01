@@ -1,38 +1,60 @@
 <header class="site-header" role="banner">
   <div class="container header-inner">
-    <a class="brand" href="/index.html" aria-label="홈으로">
+    <a class="brand" href="{% if page.lang == 'en' %}/en/{% else %}/index.html{% endif %}" aria-label="{% if page.lang == 'en' %}Go to home{% else %}홈으로{% endif %}">
       <span class="brand-title">DITM Lab</span>
-      <span class="brand-sub">디지털혁신 및 기술경영 연구실</span>
+      <span class="brand-sub">{% if page.lang == 'en' %}Digital Innovation and Technology Management Lab{% else %}디지털혁신 및 기술경영 연구실{% endif %}</span>
     </a>
 
-    <nav class="nav" aria-label="주요 메뉴">
+    <nav class="nav" aria-label="{% if page.lang == 'en' %}Main navigation{% else %}주요 메뉴{% endif %}">
+      {% if page.lang == 'en' %}
+      <a href="/en/about/">About</a>
+      <a href="/en/members/">People</a>
+      <a href="/en/publications/">Publications</a>
+      <a href="/en/news/">News</a>
+      <a href="/en/gallery/">Gallery</a>
+      <a href="/en/contact/">Contact</a>
+      <a href="{{ page.ko_url | default: '/index.html' }}" lang="ko">KO</a>
+      {% else %}
       <a href="/about.html">소개</a>
       <a href="/members.html">구성원</a>
       <a href="/publications.html">논문</a>
       <a href="/news.html">소식</a>
       <a href="/gallery.html">사진첩</a>
       <a href="/contact.html">연락처</a>
+      <a href="/en/" lang="en">EN</a>
+      {% endif %}
     </nav>
 
-    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" data-nav-open>☰</button>
+    <button class="nav-toggle" type="button" aria-label="{% if page.lang == 'en' %}Open menu{% else %}메뉴 열기{% endif %}" aria-expanded="false" data-nav-open>☰</button>
   </div>
 </header>
 
 <div class="drawer-backdrop" data-nav-backdrop aria-hidden="true"></div>
-<aside class="drawer" data-nav-drawer aria-hidden="true" aria-label="모바일 메뉴">
+<aside class="drawer" data-nav-drawer aria-hidden="true" aria-label="{% if page.lang == 'en' %}Mobile navigation{% else %}모바일 메뉴{% endif %}">
   <div class="drawer-head">
     <div style="display:flex; flex-direction:column; gap:4px;">
       <div style="font-weight:800; letter-spacing:-0.02em;">DITM Lab</div>
       <div style="color:var(--muted-2); font-size:0.92rem;">Yonsei University</div>
     </div>
-    <button class="nav-toggle" type="button" aria-label="메뉴 닫기" data-nav-close>✕</button>
+    <button class="nav-toggle" type="button" aria-label="{% if page.lang == 'en' %}Close menu{% else %}메뉴 닫기{% endif %}" data-nav-close>✕</button>
   </div>
-  <nav class="drawer-nav" aria-label="모바일 메뉴 링크">
+  <nav class="drawer-nav" aria-label="{% if page.lang == 'en' %}Mobile menu links{% else %}모바일 메뉴 링크{% endif %}">
+    {% if page.lang == 'en' %}
+    <a href="/en/about/">About</a>
+    <a href="/en/members/">People</a>
+    <a href="/en/publications/">Publications</a>
+    <a href="/en/news/">News</a>
+    <a href="/en/gallery/">Gallery</a>
+    <a href="/en/contact/">Contact</a>
+    <a href="{{ page.ko_url | default: '/index.html' }}" lang="ko">한국어</a>
+    {% else %}
     <a href="/about.html">소개 <span>About</span></a>
     <a href="/members.html">구성원 <span>People</span></a>
     <a href="/publications.html">논문 <span>Pubs</span></a>
     <a href="/news.html">소식 <span>News</span></a>
     <a href="/gallery.html">사진첩 <span>Gallery</span></a>
     <a href="/contact.html">연락처 <span>Contact</span></a>
+    <a href="/en/" lang="en">English</a>
+    {% endif %}
   </nav>
 </aside>
