@@ -55,6 +55,14 @@ current:
         - "Cloud & Digital Infrastructure"
         - "UX/UI & Digital Service Planning"
 
+    - id: "kim-yeonwoo"
+      email_id: "kimyeonwoo"
+      name_ko: "김연우"
+      name_en: "Yeonwoo Kim"
+      role: "MS Student"
+      photo: "/assets/img/avatar-placeholder.svg"
+
+
   visiting:
     - id: "wang-zhengfu"
       # 표시용 이메일 ID (예: abc123). 비워두면 id 값을 사용합니다.

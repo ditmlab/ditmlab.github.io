@@ -167,7 +167,8 @@
   const renderPersonModal = (person) => {
     if (!personModal) return;
 
-    const name = person?.name_ko || "구성원";
+    const isEnglish = document.documentElement.lang === "en";
+    const name = isEnglish ? (person?.name_en || person?.name_ko || "Member") : (person?.name_ko || "구성원");
     const role = person?.role || "";
     const photo = person?.photo || "/assets/img/avatar-placeholder.svg";
     const tags = Array.isArray(person?.tags) ? person.tags : [];
@@ -245,10 +246,10 @@
           link.target = "_blank";
           link.rel = "noopener noreferrer";
           link.className = "inline-link";
-          link.textContent = title || "성과";
+          link.textContent = title || (isEnglish ? "Achievement" : "성과");
           h.appendChild(link);
         } else {
-          h.textContent = title || "성과";
+          h.textContent = title || (isEnglish ? "Achievement" : "성과");
         }
         li.appendChild(h);
 

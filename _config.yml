@@ -1,12 +1,14 @@
 title: DITM Lab
 baseurl: ""
-url: ""
+url: "https://ditmlab.github.io"
 markdown: kramdown
 permalink: pretty
 
-# Discourage indexing/crawling (search engines).
-# You can override per-page via front matter: noindex: false
-noindex: true
+# Allow search engines to index this public website.
+noindex: false
+
+plugins:
+  - jekyll-sitemap
 
 exclude:
   - MAINTENANCE.md

@@ -34,6 +34,8 @@ body_class: members-page
         </div>
         {% endif %}
         <ul class="kv">
+            {% if pi.gsi_profile %}<li><a class="inline-link" href="{{ pi.gsi_profile }}" target="_blank"
+              rel="noopener noreferrer">정보대학원 공식 프로필</a></li>{% endif %}
           {% if pi.website %}<li><strong>홈페이지</strong> · <a class="inline-link" href="{{ pi.website }}" target="_blank"
               rel="noopener noreferrer">{{ pi.website | replace: 'https://', '' | replace: 'http://', '' }}</a></li>{%
           endif %}
