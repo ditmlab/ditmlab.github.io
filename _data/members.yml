@@ -14,7 +14,7 @@ current:
         - year: 2025
           type: "Paper"
           title: "생성형 AI 도입 이후 Q&A 플랫폼 사용자 질문 행태 변화 : 도구적(Utilitarian) 키워드 중심으로"
-          title_en: "Changes in User Questioning Behavior on a Q&A Platform after the Introduction of Generative AI: Focusing on Utilitarian Keywords"
+          title_en: "The Impact of Generative AI on User Behavior in Q&A Platforms : A Focus on Utilitarian Information Seeking"
           journal: "경영정보학연구"
           journal_en: "Information Systems Review"
           indexes: ["KCI"]
@@ -24,7 +24,7 @@ current:
         - year: 2026
           type: "Paper"
           title: "플랫폼 AI 공개 정책 이후 콘텐츠 공급과 채널 활동 변화 : 유튜브 AI 커버 시장을 중심으로"
-          title_en: "Changes in Content Supply and Channel Activity Following Platform AI Disclosure Policies: Evidence from the YouTube AI Cover Market"
+          title_en: "Content Supply and Channel Activity Following an AI Disclosure Policy: Evidence from the YouTube AI Cover Market"
           journal: "한국콘텐츠학회 논문지"
           journal_en: "The Journal of the Korea Contents Association"
           indexes: ["KCI"]
@@ -53,7 +53,7 @@ current:
         - year: 2026
           type: "Paper"
           title: "플랫폼 AI 공개 정책 이후 콘텐츠 공급과 채널 활동 변화 : 유튜브 AI 커버 시장을 중심으로"
-          title_en: "Changes in Content Supply and Channel Activity Following an AI Disclosure Policy: Evidence from the YouTube AI Cover Market"
+          title_en: "Content Supply and Channel Activity Following an AI Disclosure Policy: Evidence from the YouTube AI Cover Market"
           journal: "한국콘텐츠학회 논문지"
           journal_en: "The Journal of the Korea Contents Association"
           indexes: ["KCI"]
