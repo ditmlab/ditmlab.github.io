@@ -126,7 +126,7 @@ alumni:
         - year: 2025
           type: "Paper"
           title: "AI 에이전트 서비스 개편에 따른 사용자 인식 변화: 감성 및 토픽 기반 시계열 영향 분석"
-          title_en: "Changes in User Perceptions Following an AI Agent Service Revamp: A Sentiment- and Topic-Based Time-Series Analysis"
+          title_en: "User Perception Changes Following AI Agent Service Reorganization: A Time-Series Impact Analysis Based on Sentiment and Topic"
           journal: "인터넷전자상거래연구"
           journal_en: "Journal of Internet Electronic Commerce Research"
           indexes: ["KCI"]
