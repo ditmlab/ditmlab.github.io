@@ -184,6 +184,14 @@
   student_involved: false
   featured: false
 
+- title: "플랫폼 AI 공개 정책 이후 콘텐츠 공급과 채널 활동 변화 : 유튜브 AI 커버 시장을 중심으로"
+  authors: "심해원, 김수빈, 김남일"
+  venue: "한국콘텐츠학회 논문지"
+  year: 2025
+  tags: ["DT", "AI"]
+  student_involved: true
+  featured: false
+
 - title: "생성형 AI 도입 이후 Q&A 플랫폼 사용자 질문 행태 변화 : 도구적(Utilitarian) 키워드 중심으로"
   authors: "심해원, 김남일"
   venue: "경영정보학연구"

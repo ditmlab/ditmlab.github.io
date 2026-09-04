@@ -14,10 +14,29 @@ current:
         - year: 2025
           type: "Paper"
           title: "생성형 AI 도입 이후 Q&A 플랫폼 사용자 질문 행태 변화 : 도구적(Utilitarian) 키워드 중심으로"
+          title_en: "Changes in User Questioning Behavior on a Q&A Platform after the Introduction of Generative AI: Focusing on Utilitarian Keywords"
           journal: "경영정보학연구"
+          journal_en: "Information Systems Review"
           indexes: ["KCI"]
           note: "(주)영립원소프트랩 최우수 논문상 수상"
+          note_en: "Younglimwon Soft Lab Best Paper Award"
           url: "https://dx.doi.org/10.14329/isr.2025.27.4.443"
+        - year: 2026
+          type: "Paper"
+          title: "플랫폼 AI 공개 정책 이후 콘텐츠 공급과 채널 활동 변화 : 유튜브 AI 커버 시장을 중심으로"
+          title_en: "Changes in Content Supply and Channel Activity Following Platform AI Disclosure Policies: Evidence from the YouTube AI Cover Market"
+          journal: "한국콘텐츠학회 논문지"
+          journal_en: "The Journal of the Korea Contents Association"
+          indexes: ["KCI"]
+          url: "https://doi.org/10.5392/JKCA.2026.26.08.703"
+        - year: 2026
+          type: "Conference Paper"
+          title: "플랫폼 AI 공개 정책이 콘텐츠 공급 집중도에 미치는 영향: AI 커버 시장을 중심으로"
+          title_en: "The Impact of Platform AI Disclosure Policies on Content Supply Concentration: Evidence from the AI Cover Market"
+          venue: "2026년 경영정보관련 춘계통합학술대회"
+          venue_en: "2026 Spring Joint Conference on Management Information Systems"
+          note: "우수논문상"
+          note_en: "Outstanding Paper Award"
 
   ms:
     - id: "kim-soobin"
@@ -30,6 +49,23 @@ current:
         - "AI Management"
         - "Digital Business"
         - "Customer Behavior"
+      achievements:
+        - year: 2026
+          type: "Paper"
+          title: "플랫폼 AI 공개 정책 이후 콘텐츠 공급과 채널 활동 변화 : 유튜브 AI 커버 시장을 중심으로"
+          title_en: "Changes in Content Supply and Channel Activity Following Platform AI Disclosure Policies: Evidence from the YouTube AI Cover Market"
+          journal: "한국콘텐츠학회 논문지"
+          journal_en: "The Journal of the Korea Contents Association"
+          indexes: ["KCI"]
+          url: "https://doi.org/10.5392/JKCA.2026.26.08.703"
+        - year: 2026
+          type: "Conference Paper"
+          title: "플랫폼 AI 공개 정책이 콘텐츠 공급 집중도에 미치는 영향: AI 커버 시장을 중심으로"
+          title_en: "The Impact of Platform AI Disclosure Policies on Content Supply Concentration: Evidence from the AI Cover Market"
+          venue: "2026년 경영정보관련 춘계통합학술대회"
+          venue_en: "2026 Spring Joint Conference on Management Information Systems"
+          note: "우수논문상"
+          note_en: "Outstanding Paper Award"
 
     - id: "park-juwon"
       email_id: "gabrielpark0701"
@@ -90,6 +126,8 @@ alumni:
         - year: 2025
           type: "Paper"
           title: "AI 에이전트 서비스 개편에 따른 사용자 인식 변화: 감성 및 토픽 기반 시계열 영향 분석"
+          title_en: "Changes in User Perceptions Following an AI Agent Service Revamp: A Sentiment- and Topic-Based Time-Series Analysis"
           journal: "인터넷전자상거래연구"
+          journal_en: "Journal of Internet Electronic Commerce Research"
           indexes: ["KCI"]
           url: "https://doi.org/10.37272/JIECR.2025.8.25.4.79"
