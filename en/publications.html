@@ -8,5 +8,130 @@ permalink: /en/publications/
 body_class: publications-page
 ---
 
-<section class="page-hero page-hero--compact"><div class="container"><h1>Publications</h1><p>Journal articles and other research publications from DITM Lab.</p></div></section>
-<section class="section section--alt section--compact"><div class="container">{% if site.data.publications %}{% assign years = site.data.publications | map: 'year' | uniq | sort | reverse %}{% for year in years %}<section class="pub-year" aria-label="{{ year }}"><h2 class="pub-year-title">{{ year }}</h2><div class="pub-list">{% assign publications = site.data.publications | where: 'year', year %}{% for publication in publications %}<article class="pub-item"><div class="pub-top"><h3 class="pub-title">{% if publication.url %}<a class="inline-link" href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>{% else %}{{ publication.title }}{% endif %}</h3></div>{% if publication.authors %}<p class="pub-meta">{{ publication.authors }}</p>{% endif %}{% if publication.venue %}<p class="pub-journal">{{ publication.venue }}{% if publication.note %} <span class="pub-note">({{ publication.note }})</span>{% endif %}</p>{% endif %}</article>{% endfor %}</div></section>{% endfor %}{% else %}<p class="lead">Publications will be added soon.</p>{% endif %}</div></section>
+<section class="page-hero page-hero--compact">
+  <div class="container">
+    <h1>Publications</h1>
+    <p>Journal articles and other research publications from DITM Lab.</p>
+  </div>
+</section>
+
+<section class="section section--alt section--compact">
+  <div class="container">
+    {% if site.data.publications %}
+    {% assign pubs_source = site.data.publications %}
+
+    {%- comment -%}
+    featured: true/false (manual)
+    If not specified, auto-treat FT50/UTD24 in note as featured.
+    {%- endcomment -%}
+    {% assign featured = "" | split: "" %}
+    {% assign regular = "" | split: "" %}
+    {% for p in pubs_source %}
+    {% assign is_featured = false %}
+    {% if p.featured == true %}{% assign is_featured = true %}{% endif %}
+    {% if p.featured == false %}{% assign is_featured = false %}{% endif %}
+    {% if p.featured != true and p.featured != false and p.note %}
+    {% assign note_u = p.note | upcase %}
+    {% if note_u contains 'FT50' or note_u contains 'UTD24' %}{% assign is_featured = true %}{% endif %}
+    {% endif %}
+
+    {% if is_featured %}
+    {% assign featured = featured | push: p %}
+    {% else %}
+    {% assign regular = regular | push: p %}
+    {% endif %}
+    {% endfor %}
+
+    {% if featured and featured.size > 0 %}
+    <section class="pub-featured" aria-label="Featured Publications">
+      <h2 class="h2 h2--tight">Featured Publications</h2>
+
+      {% assign featured_utd24 = "" | split: "" %}
+      {% assign featured_other = "" | split: "" %}
+      {% for p in featured %}
+      {% assign has_utd24 = false %}
+      {% if p.note %}
+      {% assign _note_u = p.note | upcase %}
+      {% if _note_u contains 'UTD24' %}{% assign has_utd24 = true %}{% endif %}
+      {% endif %}
+      {% if has_utd24 == false and p.tags and p.tags.size > 0 %}
+      {% for _t in p.tags %}
+      {% assign _tu = _t | upcase %}
+      {% if _tu == 'UTD24' %}{% assign has_utd24 = true %}{% endif %}
+      {% endfor %}
+      {% endif %}
+      {% if has_utd24 %}
+      {% assign featured_utd24 = featured_utd24 | push: p %}
+      {% else %}
+      {% assign featured_other = featured_other | push: p %}
+      {% endif %}
+      {% endfor %}
+      {% assign featured_ordered = featured_utd24 | concat: featured_other %}
+
+      <div class="pub-list">
+        {% for p in featured_ordered %}
+        <article class="pub-item pub-item--featured">
+          <div class="pub-top">
+            <h3 class="pub-title">{% if p.url %}<a class="inline-link" href="{{ p.url }}" target="_blank"
+                rel="noopener noreferrer">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+            <span class="year">{{ p.year }}</span>
+          </div>
+          {% if p.authors %}<p class="pub-meta">{{ p.authors }}</p>{% endif %}
+          {% if p.venue %}<p class="pub-journal">{{ p.venue }}{% if p.note %} <span class="pub-note">({{ p.note
+              }})</span>{% endif %}</p>{% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <div style="margin-top: var(--space-6);"></div>
+    {% endif %}
+
+    <section class="pub-all" aria-label="All Publications" data-include-featured="true">
+      <div class="pub-all-head">
+        <h2 class="h2 h2--tight">All Publications</h2>
+        <label class="pub-toggle">
+          <input type="checkbox" data-pub-include-featured checked />
+          <span>Include featured publications</span>
+        </label>
+      </div>
+
+      {%- comment -%}
+      Preserve ordering within the same year as written in _data/publications.yml.
+      {%- endcomment -%}
+      {% assign years_sorted = pubs_source | map: "year" | uniq | sort | reverse %}
+      <div class="pub-years">
+        {% for y in years_sorted %}
+        {% assign items = pubs_source | where: "year", y %}
+        <section class="pub-year" aria-label="{{ y }}">
+          <h2 class="pub-year-title">{{ y }}</h2>
+          <div class="pub-list">
+            {% for p in items %}
+            {% assign _is_featured = false %}
+            {% if p.featured == true %}{% assign _is_featured = true %}{% endif %}
+            {% if p.featured == false %}{% assign _is_featured = false %}{% endif %}
+            {% if p.featured != true and p.featured != false and p.note %}
+            {% assign _note_u = p.note | upcase %}
+            {% if _note_u contains 'FT50' or _note_u contains 'UTD24' %}{% assign _is_featured = true %}{% endif %}
+            {% endif %}
+
+            <article class="pub-item" data-is-featured="{% if _is_featured %}true{% else %}false{% endif %}">
+              <div class="pub-top">
+                <h3 class="pub-title">{% if p.url %}<a class="inline-link" href="{{ p.url }}" target="_blank"
+                    rel="noopener noreferrer">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+              </div>
+              {% if p.authors %}<p class="pub-meta">{{ p.authors }}</p>{% endif %}
+              {% if p.venue %}<p class="pub-journal">{{ p.venue }}{% if p.note %} <span class="pub-note">({{ p.note
+                  }})</span>{% endif %}</p>{% endif %}
+            </article>
+            {% endfor %}
+          </div>
+        </section>
+        {% endfor %}
+      </div>
+    </section>
+    {% else %}
+    <p class="lead">Publications will be added soon.</p>
+    {% endif %}
+  </div>
+</section>
