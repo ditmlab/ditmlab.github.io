@@ -96,8 +96,12 @@ current:
       name_ko: "김연우"
       name_en: "Yeonwoo Kim"
       role: "MS Student"
-      photo: "/assets/img/avatar-placeholder.svg"
-
+      photo: "/assets/img/yeonwoo_profile.jpeg"
+      tags:
+        - "AI & Digital Transformation"
+        - "AI & Human Decision-Making"
+        - "Agentic AI & Human-AI Collaboration"
+        - "Enterprise AI & Business Process Innovation"
 
   visiting:
     - id: "wang-zhengfu"
