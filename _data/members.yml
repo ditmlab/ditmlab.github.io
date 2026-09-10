@@ -43,7 +43,7 @@ current:
       name_ko: "고승규"
       name_en: "Seunggyu Go"
       role: "PhD Student"
-      photo: "/assets/img/seunggyu_profile.jpeg"
+      photo: "/assets/img/seunggyu_profile.jpg"
       tags:
         - "AI Transformation"
         - "AI for Business Management"
@@ -108,7 +108,7 @@ current:
       name_ko: "김연우"
       name_en: "Yeonwoo Kim"
       role: "MS Student"
-      photo: "/assets/img/yeonwoo_profile.jpeg"
+      photo: "/assets/img/yeonwoo_profile.jpg"
       tags:
         - "AI & Digital Transformation"
         - "AI & Human Decision-Making"
