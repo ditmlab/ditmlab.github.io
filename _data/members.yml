@@ -103,6 +103,18 @@ current:
         - "Agentic AI & Human-AI Collaboration"
         - "Enterprise AI & Business Process Innovation"
 
+    - id: "go-seunggyu"
+      email_id: "ksg"
+      name_ko: "고승규"
+      name_en: "Seunggyu Go"
+      role: "MS Student"
+      photo: "/assets/img/seunggyu_profile.jpeg"
+      tags:
+        - "AI Transformation"
+        - "AI for Business Management"
+        - "Human-AI Interaction"
+        - "Agentic AI"
+        
   visiting:
     - id: "wang-zhengfu"
       # 표시용 이메일 ID (예: abc123). 비워두면 id 값을 사용합니다.
