@@ -37,7 +37,19 @@ current:
           venue_en: "2026 Spring Joint Conference on Management Information Systems"
           note: "우수논문상"
           note_en: "Outstanding Paper Award"
-
+    
+    - id: "go-seunggyu"
+      email_id: "ksg"
+      name_ko: "고승규"
+      name_en: "Seunggyu Go"
+      role: "PhD Student"
+      photo: "/assets/img/seunggyu_profile.jpeg"
+      tags:
+        - "AI Transformation"
+        - "AI for Business Management"
+        - "Human-AI Interaction"
+        - "Agentic AI"
+        
   ms:
     - id: "kim-soobin"
       email_id: "soo"
@@ -96,9 +108,14 @@ current:
       name_ko: "김연우"
       name_en: "Yeonwoo Kim"
       role: "MS Student"
-      photo: "/assets/img/avatar-placeholder.svg"
+      photo: "/assets/img/yeonwoo_profile.jpeg"
+      tags:
+        - "AI & Digital Transformation"
+        - "AI & Human Decision-Making"
+        - "Agentic AI & Human-AI Collaboration"
+        - "Enterprise AI & Business Process Innovation"
 
-
+        
   visiting:
     - id: "wang-zhengfu"
       # 표시용 이메일 ID (예: abc123). 비워두면 id 값을 사용합니다.
