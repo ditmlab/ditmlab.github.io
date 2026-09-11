@@ -15,10 +15,10 @@ body_class: members-page
 
 {% assign pi = site.data.pi %}
 
-<section class="section section--alt" aria-label="교수">
+<section class="section section--alt pi-section" aria-label="교수">
   <div class="container">
     <div class="section-label">교수</div>
-        <p class="lead">연구실 교수님을 소개합니다.</p>
+    <p class="lead">연구실 교수님을 소개합니다.</p>
     <div class="prof-grid">
       <div class="prof-photo">
         <img src="{{ pi.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="{{ pi.name_ko }} 교수 사진"
@@ -27,13 +27,23 @@ body_class: members-page
       <div class="prof-box">
         <h2 class="prof-name">{{ pi.name_ko }} <span style="color:var(--muted-2); font-weight:700;">({{ pi.name_en
             }})</span></h2>
-        {% assign pi_interests = pi.interests | split: ',' %}
-        {% if pi_interests and pi_interests.size > 0 %}
-        <div class="person-tags" aria-label="연구 키워드" style="margin-top: 10px;">
-          {% for t in pi_interests %}<span class="tag">{{ t | strip }}</span>{% endfor %}
+        {% if pi.interests and pi.interests.size > 0 %}
+        <div style="margin-top: 16px;">
+          <strong style="display: block; font-size: 0.95rem; margin-bottom: 8px;">연구 관심</strong>
+          <div class="person-tags" aria-label="연구 관심">
+            {% for interest in pi.interests %}<span class="tag">{{ interest }}</span>{% endfor %}
+          </div>
         </div>
         {% endif %}
-        <ul class="kv">
+        {% if pi.methods and pi.methods.size > 0 %}
+        <div style="margin-top: 16px;">
+          <strong style="display: block; font-size: 0.95rem; margin-bottom: 8px;">연구 방법</strong>
+          <div class="person-tags" aria-label="연구 방법">
+            {% for method in pi.methods %}<span class="tag">{{ method }}</span>{% endfor %}
+          </div>
+        </div>
+        {% endif %}
+        <ul class="kv" style="margin-top: 20px;">
             {% if pi.gsi_profile %}<li><a class="inline-link" href="{{ pi.gsi_profile }}" target="_blank"
               rel="noopener noreferrer">정보대학원 공식 프로필</a></li>{% endif %}
           {% if pi.website %}<li><strong>홈페이지</strong> · <a class="inline-link" href="{{ pi.website }}" target="_blank"
@@ -51,27 +61,18 @@ body_class: members-page
   </div>
 </section>
 
-<section class="section">
+<section class="section members-directory">
   <div class="container">
-    <h2 class="h2" style="margin-top: 12px;">재학생</h2>
-    <p class="lead">박사과정, 석사과정, 졸업생 구성원을 소개합니다.</p>
-    <p style="margin-top:8px; color: var(--muted-2);">이메일 표기에서 <strong>@연세이메일</strong>을 <strong>@yonsei.ac.kr</strong>로 바꿔주세요.</p>
+    <p class="members-email-note">이메일 표기에서 <strong>@연세이메일</strong>을 <strong>@yonsei.ac.kr</strong>로 바꿔주세요.</p>
 
     {% assign current = site.data.members.current %}
 
-    {% assign _member_groups = "phd,ms" | split: "," %}
-    {% for _group in _member_groups %}
-      {% if _group == "phd" %}
-        {% assign _group_label = "박사과정" %}
-        {% assign _members = current.phd %}
-      {% else %}
-        {% assign _group_label = "석사과정" %}
-        {% assign _members = current.ms %}
-      {% endif %}
-      {% if _members and _members.size > 0 %}
-      <h3 class="people-subtitle" style="margin-top: {% if forloop.first %}0{% else %}var(--space-5){% endif %};">{{ _group_label }}</h3>
-      <div class="people-list" role="list" aria-label="{{ _group_label }} 목록">
-        {% for m in _members %}
+    <!-- PhD Students -->
+    {% if current.phd and current.phd.size > 0 %}
+    <div class="member-group">
+      <h2 class="member-group-title h2">박사과정</h2>
+      <div class="people-list people-list--multi" role="list" aria-label="박사과정 목록">
+        {% for m in current.phd %}
         <article class="person" role="listitem">
           <div class="person-avatar" aria-hidden="true">
             <img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" />
@@ -105,98 +106,132 @@ body_class: members-page
         </article>
         {% endfor %}
       </div>
-      {% endif %}
-    {% endfor %}
-
-    <div style="margin-top: var(--space-8);"></div>
-
-    {% if current.visiting and current.visiting.size > 0 %}
-    <h2 class="h2" style="margin-top: 12px;">방문연구원</h2>
-    <p class="lead">방문(Visiting) 연구원/학생입니다.</p>
-
-    <div class="people" aria-label="방문연구원 목록" style="margin-top: var(--space-6);">
-      <section class="people-group" aria-label="방문연구원">
-        <div class="people-list" role="list">
-          {% for m in current.visiting %}
-          <article class="person" role="listitem">
-            <div class="person-avatar" aria-hidden="true">
-              <img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" />
-            </div>
-            <div class="person-main">
-              <div class="person-top">
-                <h3 class="person-name">{{ m.name_ko }}</h3>
-                <div class="person-right">
-                  <span class="person-role">{{ m.role }}</span>
-                </div>
-              </div>
-              {% if m.from %}
-              <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
-                From: {{ m.from }}
-              </div>
-              {% endif %}
-              {% if m.tags and m.tags.size > 0 %}
-              <div class="person-tags" aria-label="연구 키워드">
-                {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
-              </div>
-              {% endif %}
-              {% if m.email_id %}
-              {% assign email_id = m.email_id | strip %}
-              {% if email_id != '' %}
-              <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
-                {{ email_id }}@연세이메일
-              </div>
-              {% endif %}
-              {% endif %}
-              <div class="person-actions">
-                {% if m.achievements and m.achievements.size > 0 %}
-                <button class="person-more js-person-more" type="button" data-person-id="{{ m.id }}">자세히 보기</button>
-                {% endif %}
-              </div>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
-      </section>
     </div>
-
-    <div style="margin-top: var(--space-8);"></div>
     {% endif %}
 
-    <h2 class="h2" style="margin-top: 12px;">졸업생</h2>
-    <p class="lead">졸업생(Alumni) 목록입니다.</p>
-
-    {% assign alumni = site.data.members.alumni %}
-    <div class="people" aria-label="졸업생 목록" style="margin-top: var(--space-6);">
-      <section class="people-group" aria-label="졸업생">
-        <div class="people-list" role="list">
-          {% for m in alumni %}
-          <article class="person" role="listitem">
-            <div class="person-avatar" aria-hidden="true">
-              <img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" />
+    <!-- Master's Students -->
+    {% if current.ms and current.ms.size > 0 %}
+    <div class="member-group">
+      <h2 class="member-group-title h2">석사과정</h2>
+      <div class="people-list people-list--multi" role="list" aria-label="석사과정 목록">
+        {% for m in current.ms %}
+        <article class="person" role="listitem">
+          <div class="person-avatar" aria-hidden="true">
+            <img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" />
+          </div>
+          <div class="person-main">
+            <div class="person-top">
+              <h3 class="person-name">{{ m.name_ko }}</h3>
+              <div class="person-right">
+                <span class="person-role">{{ m.role }}</span>
+              </div>
             </div>
-            <div class="person-main">
-              <div class="person-top">
-                <h3 class="person-name">{{ m.name_ko }}</h3>
-                <div class="person-right">
-                  <span class="person-role">{{ m.role }}</span>
-                </div>
-              </div>
-              {% if m.tags and m.tags.size > 0 %}
-              <div class="person-tags" aria-label="연구 키워드">
-                {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
-              </div>
+            {% if m.tags and m.tags.size > 0 %}
+            <div class="person-tags" aria-label="연구 키워드">
+              {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+            </div>
+            {% endif %}
+            {% if m.email_id %}
+            {% assign email_id = m.email_id | strip %}
+            {% if email_id != '' %}
+            <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
+              {{ email_id }}@연세이메일
+            </div>
+            {% endif %}
+            {% endif %}
+            <div class="person-actions">
+              {% if m.achievements and m.achievements.size > 0 %}
+              <button class="person-more js-person-more" type="button" data-person-id="{{ m.id }}">자세히 보기</button>
               {% endif %}
-              <div class="person-actions">
-                {% if m.achievements and m.achievements.size > 0 %}
-                <button class="person-more js-person-more" type="button" data-person-id="{{ m.id }}">자세히 보기</button>
-                {% endif %}
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Visiting Researchers -->
+    {% if current.visiting and current.visiting.size > 0 %}
+    <div class="member-group">
+      <h2 class="member-group-title h2">방문연구원</h2>
+      <div class="people-list people-list--multi" role="list" aria-label="방문연구원 목록">
+        {% for m in current.visiting %}
+        <article class="person" role="listitem">
+          <div class="person-avatar" aria-hidden="true">
+            <img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" />
+          </div>
+          <div class="person-main">
+            <div class="person-top">
+              <h3 class="person-name">{{ m.name_ko }}</h3>
+              <div class="person-right">
+                <span class="person-role">{{ m.role }}</span>
               </div>
             </div>
-          </article>
-          {% endfor %}
-        </div>
-      </section>
+            {% if m.from %}
+            <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
+              {{ m.from }}
+            </div>
+            {% endif %}
+            {% if m.tags and m.tags.size > 0 %}
+            <div class="person-tags" aria-label="연구 키워드">
+              {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+            </div>
+            {% endif %}
+            {% if m.email_id %}
+            {% assign email_id = m.email_id | strip %}
+            {% if email_id != '' %}
+            <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
+              {{ email_id }}@연세이메일
+            </div>
+            {% endif %}
+            {% endif %}
+            <div class="person-actions">
+              {% if m.achievements and m.achievements.size > 0 %}
+              <button class="person-more js-person-more" type="button" data-person-id="{{ m.id }}">자세히 보기</button>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
     </div>
+    {% endif %}
+
+    <!-- Alumni -->
+    {% assign alumni = site.data.members.alumni %}
+    {% if alumni and alumni.size > 0 %}
+    <div class="member-group">
+      <h2 class="member-group-title h2">졸업생</h2>
+      <div class="people-list people-list--multi" role="list" aria-label="졸업생 목록">
+        {% for m in alumni %}
+        <article class="person" role="listitem">
+          <div class="person-avatar" aria-hidden="true">
+            <img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" />
+          </div>
+          <div class="person-main">
+            <div class="person-top">
+              <h3 class="person-name">{{ m.name_ko }}</h3>
+              <div class="person-right">
+                <span class="person-role">{{ m.role }}</span>
+              </div>
+            </div>
+            {% if m.tags and m.tags.size > 0 %}
+            <div class="person-tags" aria-label="연구 키워드">
+              {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+            </div>
+            {% endif %}
+            <div class="person-actions">
+              {% if m.achievements and m.achievements.size > 0 %}
+              <button class="person-more js-person-more" type="button" data-person-id="{{ m.id }}">자세히 보기</button>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
   </div>
 </section>
 
