@@ -210,13 +210,21 @@
         return flags;
       };
 
+      const getLocalizedValue = (item, key) => {
+        const localizedKey = `${key}_en`;
+        const value = isEnglish ? (item?.[localizedKey] || item?.[key]) : item?.[key];
+        return value == null ? "" : String(value);
+      };
+
       sorted.forEach((a) => {
         const year = a?.year ? String(a.year) : "";
         const type = a?.type ? String(a.type) : "";
-        const title = a?.title ? String(a.title) : "";
-        const note = a?.note ? String(a.note) : "";
+        const title = getLocalizedValue(a, "title");
+        const note = getLocalizedValue(a, "note");
         const url = a?.url ? String(a.url) : "";
-        const journal = a?.journal ? String(a.journal) : (a?.venue ? String(a.venue) : "");
+        const journal = isEnglish
+          ? String(a?.journal_en || a?.venue_en || a?.journal || a?.venue || "")
+          : String(a?.journal || a?.venue || "");
         const indexes = getIndexes(a);
 
         const li = document.createElement("li");

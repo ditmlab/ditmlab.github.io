@@ -572,3 +572,82 @@
 @media (min-width: 920px) {
   .footer-grid { grid-template-columns: 1.3fr 0.7fr; align-items: start; }
 }
+
+/* Members / People page */
+
+.members-page .pi-section {
+  padding: 56px 0 48px;
+}
+
+.members-page .pi-section .prof-grid {
+  margin-top: 24px;
+  align-items: start;
+}
+
+.members-page .members-directory {
+  padding: 48px 0 80px;
+}
+
+.members-page .members-email-note {
+  margin: 0 0 28px;
+  color: var(--muted-2);
+  font-size: 0.9rem;
+}
+
+.members-page .member-group + .member-group {
+  margin-top: 48px;
+}
+
+.members-page .member-group-title {
+  margin: 0 0 16px;
+}
+
+@media (min-width: 980px) {
+  .members-page .pi-section .prof-grid {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .members-page .people-list--multi {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .members-page .people-list--multi .person {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+
+  .members-page .people-list--multi .person-avatar {
+    width: 112px;
+    height: 112px;
+  }
+}
+
+@media (max-width: 979px) {
+  .members-page .pi-section {
+    padding: 40px 0;
+  }
+
+  .members-page .members-directory {
+    padding: 40px 0 64px;
+  }
+
+  .members-page .pi-section .prof-grid {
+    margin-top: 20px;
+    gap: 24px;
+  }
+
+  .members-page .member-group + .member-group {
+    margin-top: 36px;
+  }
+
+  .members-page .members-email-note {
+    margin-bottom: 24px;
+  }
+
+  .members-page .tag {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.35;
+  }
+}
