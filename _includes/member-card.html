@@ -1,0 +1,11 @@
+<article class="person" role="listitem">
+  <div class="person-avatar" aria-hidden="true"><img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" /></div>
+  <div class="person-main">
+    <div class="person-top"><h3 class="person-name">{% if lang == 'en' %}{{ m.name_en | default: m.name_ko }}{% else %}{{ m.name_ko | default: m.name_en }}{% endif %}</h3><div class="person-right"><span class="person-role">{{ m.role }}</span></div></div>
+    {% if m.from %}<p class="person-affiliation">{{ m.from }}</p>{% endif %}
+    {% if m.tags and m.tags.size > 0 %}<div class="person-tags">{% for tag in m.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}
+    {% assign email_id = m.email_id | default: '' | strip %}
+    {% if email_id != '' %}<p class="person-email">{{ email_id | escape }} [at] yonsei.ac.kr</p>{% endif %}
+    <div class="person-actions">{% if m.achievements and m.achievements.size > 0 %}<button class="person-more js-person-more" type="button" data-person-id="{{ m.id }}">{{ t.more }}</button>{% endif %}</div>
+  </div>
+</article>

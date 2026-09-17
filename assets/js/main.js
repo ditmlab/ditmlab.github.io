@@ -85,15 +85,23 @@
 
   const renderPiModal = (pi) => {
     if (!piModal) return;
-    const name = pi?.name_ko || "교수";
-    const title = pi?.title || "";
+    const isEnglish = document.documentElement.lang === "en";
+    const name = (isEnglish ? pi?.name_en : pi?.name_ko) || pi?.name_en || "PI";
+    const title = (isEnglish ? pi?.title_en : pi?.title) || pi?.title || "";
     const photo = pi?.photo || "/assets/img/avatar-placeholder.svg";
-    const tags = (pi?.interests ? String(pi.interests).split(",").map((s) => s.trim()).filter(Boolean) : []);
+    const tags = Array.isArray(pi?.interests) ? pi.interests : [];
 
-    if (piModalName) piModalName.textContent = pi?.name_en ? `${name} (${pi.name_en})` : name;
+    if (piModalName) piModalName.textContent = !isEnglish && pi?.name_en ? `${name} (${pi.name_en})` : name;
     if (piModalTitle) piModalTitle.textContent = title;
     if (piModalPhoto) piModalPhoto.setAttribute("src", photo);
-    if (piModalTags) piModalTags.innerHTML = tags.map((t) => `<span class="tag">${t}</span>`).join("");
+    if (piModalTags) {
+      piModalTags.replaceChildren(...tags.map((text) => {
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = text;
+        return tag;
+      }));
+    }
 
     if (piModalEmail) {
       const email = pi?.email ? String(pi.email) : "";
@@ -108,12 +116,12 @@
     }
 
     if (piModalOffice) {
-      const office = pi?.office ? String(pi.office) : "";
-      const studentLab = pi?.student_lab ? String(pi.student_lab) : "";
+      const office = (isEnglish ? pi?.office_en : pi?.office) || pi?.office || "";
+      const studentLab = (isEnglish ? pi?.student_lab_en : pi?.student_lab) || pi?.student_lab || "";
       piModalOffice.textContent = [office, studentLab].filter(Boolean).join(" / ") || "-";
     }
 
-    const career = pi?.career ? String(pi.career) : "";
+    const career = (isEnglish ? pi?.career_en : pi?.career) || pi?.career || "";
     if (piModalCareerSection && piModalCareer) {
       piModalCareer.innerHTML = "";
       if (!career) {

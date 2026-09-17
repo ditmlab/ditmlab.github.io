@@ -4,10 +4,7 @@ title: "Associate Professor, Yonsei University"
 title_en: "Associate Professor"
 affiliation: "Graduate School of Information"
 affiliation_en: "Graduate School of Information, Yonsei University"
-interests:
-  - "AI & Human Decision-Making"
-  - "Digital Platforms & Markets"
-  - "Technology, Innovation & Institutions"
+# Research themes are defined in _data/research.json.
 methods:
   - "Causal Inference"
   - "Econometrics"

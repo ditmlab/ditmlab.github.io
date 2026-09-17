@@ -1,0 +1,126 @@
+{
+  "ko": {
+    "about_title": "연구실 소개",
+    "about_subtitle": "AI와 기술 변화를 중심으로 연결된 연구 주제를 탐구합니다.",
+    "research": "연구 분야",
+    "research_themes": "연구 주제",
+    "contact": "문의하기",
+    "join": "지원/문의",
+    "join_text": "DITM Lab은 석·박사과정 지원과 문의에 열려 있습니다. 간단한 소개와 관심 연구 주제를 이메일로 보내 주세요.",
+    "email_us": "이메일로 문의",
+    "contact_details": "연락처 보기",
+    "people": "구성원",
+    "people_intro": "DITM Lab의 교수, 대학원생, 방문연구원 및 졸업생을 소개합니다.",
+    "pi": "교수",
+    "methods": "연구 방법",
+    "profile": "정보대학원 공식 프로필",
+    "website": "홈페이지",
+    "office": "교수 연구실",
+    "pi_more": "교수 자세히",
+    "email_note": "이메일의 <strong>[at]</strong>을 <strong>@</strong>로 바꾸어 사용해 주세요.",
+    "phd": "박사과정",
+    "ms": "석사과정",
+    "visiting": "방문연구원",
+    "alumni": "졸업생",
+    "more": "자세히 보기",
+    "close": "닫기",
+    "achievements": "성과",
+    "empty": "아직 등록된 성과가 없습니다.",
+    "career": "이력",
+    "news": "최근 소식",
+    "news_intro": "연구실 소식과 수상/공지 업데이트를 확인하세요.",
+    "all_news": "소식 전체 보기",
+    "no_news": "아직 등록된 소식이 없습니다.",
+    "about_url": "/about.html",
+    "contact_url": "/contact.html",
+    "news_url": "/news.html",
+    "links": [
+      {
+        "title": "소개",
+        "url": "/about.html"
+      },
+      {
+        "title": "구성원",
+        "url": "/members.html"
+      },
+      {
+        "title": "논문",
+        "url": "/publications.html"
+      },
+      {
+        "title": "소식",
+        "url": "/news.html"
+      },
+      {
+        "title": "사진첩",
+        "url": "/gallery.html"
+      },
+      {
+        "title": "연락처",
+        "url": "/contact.html"
+      }
+    ]
+  },
+  "en": {
+    "about_title": "About DITM Lab",
+    "about_subtitle": "Connected research themes centered on AI and technological change.",
+    "research": "Research Areas",
+    "research_themes": "Research Themes",
+    "contact": "Contact",
+    "join": "Prospective Students",
+    "join_text": "DITM Lab welcomes inquiries from prospective master's and doctoral students. Please email us with a brief introduction and your research interests.",
+    "email_us": "Email Us",
+    "contact_details": "Contact Details",
+    "people": "People",
+    "people_intro": "Meet the principal investigator, graduate students, visiting researchers, and alumni of DITM Lab.",
+    "pi": "Principal Investigator",
+    "methods": "Methods",
+    "profile": "Official GSI Profile",
+    "website": "Website",
+    "office": "Faculty Office",
+    "pi_more": "PI Details",
+    "email_note": "Replace <strong>[at]</strong> with <strong>@</strong> when emailing a lab member.",
+    "phd": "PhD Students",
+    "ms": "Master’s Students",
+    "visiting": "Visiting Researchers",
+    "alumni": "Alumni",
+    "more": "View achievements",
+    "close": "Close",
+    "achievements": "Achievements",
+    "empty": "No achievements have been added yet.",
+    "career": "Academic Appointments",
+    "news": "Latest News",
+    "news_intro": "Updates, awards, and announcements from DITM Lab.",
+    "all_news": "All News",
+    "no_news": "There are no news posts yet.",
+    "about_url": "/en/about/",
+    "contact_url": "/en/contact/",
+    "news_url": "/en/news/",
+    "links": [
+      {
+        "title": "About",
+        "url": "/en/about/"
+      },
+      {
+        "title": "People",
+        "url": "/en/members/"
+      },
+      {
+        "title": "Publications",
+        "url": "/en/publications/"
+      },
+      {
+        "title": "News",
+        "url": "/en/news/"
+      },
+      {
+        "title": "Gallery",
+        "url": "/en/gallery/"
+      },
+      {
+        "title": "Contact",
+        "url": "/en/contact/"
+      }
+    ]
+  }
+}

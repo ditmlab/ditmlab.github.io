@@ -1,0 +1,81 @@
+{% assign lang = page.lang | default: 'ko' %}
+{% assign t = site.data.site_text[lang] %}
+
+
+<section class="hero" id="home">
+    <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto" poster="/assets/img/hero-poster.svg">
+            <source src="/assets/video/building.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="container">
+        <div class="hero-content hero-content--center">
+            <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Yonsei University · Graduate School of Information</div>
+            <h1 class="hero-title">{% if lang == 'en' %}Digital Innovation and Technology Management Lab{% else %}디지털혁신 및 기술경영 연구실{% endif %}</h1>
+            <p class="hero-subtitle">{% if lang == 'en' %}{{ site.data.research.statement.en }}{% else %}Digital Innovation and Technology Management Lab{% endif %}</p>
+            <div class="hero-actions hero-actions--center">
+                <a class="btn btn--solid" href="{{ t.about_url }}">{{ t.about_title }}</a>
+                <a class="btn btn--outline" href="{{ t.contact_url }}">{{ t.contact }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section home-section" aria-label="{{ t.research }}">
+    <div class="container">
+        <div class="home-split">
+            <div>
+                <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Research</div>
+                <h2 class="h2">{{ t.research }}</h2>
+                <p class="lead">{{ site.data.research.statement[lang] }}</p>
+
+                {% include research-themes.html %}
+            </div>
+
+            <aside class="home-panel" aria-label="Quick Links">
+                <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Quick Links</div>
+                <ul class="home-links">{% for link in t.links %}<li><a class="home-link" href="{{ link.url }}"><span>{{ link.title }}</span></a></li>{% endfor %}</ul>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="section home-section" aria-label="{{ t.news }}">
+    <div class="container">
+        <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>News</div>
+        <h2 class="h2">{{ t.news }}</h2>
+        <p class="lead">{{ t.news_intro }}</p>
+
+        {% if site.posts and site.posts.size > 0 %}
+            <div class="post-grid" style="margin-top: var(--space-6);" aria-label="{{ t.news }}">
+                {% for post in site.posts limit: 2 %}
+                    <article class="post-item">
+                        <div class="post-item-top">
+                            <h3 class="post-item-title"><a class="inline-link" href="{{ post.url }}">{% if lang == 'en' %}{{ post.title_en | default: post.title }}{% else %}{{ post.title }}{% endif %}</a></h3>
+                            <div class="post-right">
+                                {% assign is_award = false %}
+                                {% if post.categories contains 'award' %}{% assign is_award = true %}{% endif %}
+                                {% if post.tags contains 'award' %}{% assign is_award = true %}{% endif %}
+                                {% if is_award %}<span class="post-badge post-badge--award">Award</span>{% endif %}
+                                <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                            </div>
+                        </div>
+                        {% if lang == 'en' and post.summary_en %}<p class="post-excerpt">{{ post.summary_en | strip_html | strip_newlines | truncate: 140 }}</p>
+                        {% elsif post.summary %}
+                            <p class="post-excerpt">{{ post.summary | strip_html | strip_newlines | truncate: 140 }}</p>
+                        {% elsif post.excerpt %}
+                            <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
+                        {% endif %}
+                    </article>
+                {% endfor %}
+            </div>
+            <div class="home-cta">
+                <a class="btn btn--brand" href="{{ t.news_url }}">{{ t.all_news }}</a>
+            </div>
+        {% else %}
+            <p class="lead" style="margin-top: var(--space-6);">{{ t.no_news }}</p>
+        {% endif %}
+    </div>
+</section>

@@ -16,7 +16,7 @@ body_class: gallery-page
 <section class="section section--alt">
   <div class="container">
     {% if site.data.gallery and site.data.gallery.size > 0 %}
-    <div class="gallery-grid" aria-label="사진 목록">
+    <div class="gallery-grid{% if site.data.gallery.size == 1 %} gallery-grid--single{% endif %}" aria-label="사진 목록">
       {% for item in site.data.gallery %}
       <a class="gallery-item js-gallery-open" href="{{ item.image }}" data-gallery-index="{{ forloop.index0 }}"
         data-no-save>

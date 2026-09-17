@@ -225,17 +225,17 @@ body.contact-page {
   z-index: 50;
   height: var(--header-h);
   border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.72);
+  background: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
-  .site-header { background: rgba(255, 255, 255, 0.72); }
+  .site-header { background: #ffffff; }
 }
 
 /* Intentionally avoid glass/metal blur effects */
 
 .site-header.is-scrolled {
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .header-inner {
@@ -367,3 +367,15 @@ body.nav-open .drawer { transform: translateX(0); }
   .drawer, .drawer-backdrop { display: none; }
 }
 
+
+/* Keep Korean words intact without changing the home hero typography. */
+html[lang="ko"] .section,
+html[lang="ko"] .page-hero,
+html[lang="ko"] .site-footer,
+html[lang="ko"] .modal {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+a[href^="mailto:"], .kv a, .person-email {
+  overflow-wrap: anywhere;
+}

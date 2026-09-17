@@ -255,12 +255,17 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* Home page */
+/* Home page: adjacent section padding totals 88px. */
+.home-section { padding: var(--space-7) 0; }
+@media (max-width: 719px) {
+  .home-section { padding: var(--space-6) 0; }
+}
+
 .home-split {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-7);
-  margin-top: var(--space-6);
+  margin-top: 0;
   align-items: start;
 }
 
@@ -325,14 +330,17 @@
   padding: 0;
   margin: 14px 0 0;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
 .home-link {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: baseline;
+  flex-direction: column;
+  height: 100%;
+  gap: 2px;
+  align-items: flex-start;
+  overflow-wrap: anywhere;
   text-decoration: none;
   padding: 12px 12px;
   border-radius: 14px;
@@ -352,8 +360,8 @@
 
 .home-link-sub {
   color: var(--muted-2);
-  font-weight: 650;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
+  font-weight: 500;
 }
 
 .home-cta {

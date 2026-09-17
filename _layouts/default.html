@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="/assets/css/pages.css?v={{ site.time | date: '%s' }}" />
 </head>
 {% assign _is_home = false %}
-{% if page.url == '/' or page.url == '/index.html' %}{% assign _is_home = true %}{% endif %}
+{% if page.url == '/' or page.url == '/index.html' or page.url == '/en/' %}{% assign _is_home = true %}{% endif %}
 <body class="{% if _is_home %}is-home{% else %}is-subpage{% endif %}{% if page.body_class %} {{ page.body_class }}{% endif %}">
   <a class="skip-link" href="#main">{% if page.lang == 'en' %}Skip to content{% else %}본문으로 바로가기{% endif %}</a>
 

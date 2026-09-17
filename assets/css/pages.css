@@ -77,8 +77,8 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #ffffff;
-  padding: 24px;
-  box-shadow: var(--shadow-card);
+  padding: 20px;
+  box-shadow: none;
   transition: box-shadow 200ms ease, transform 200ms ease;
 }
 
@@ -95,13 +95,9 @@
 .pub-title { margin: 0 0 8px; font-weight: 850; letter-spacing: -0.01em; }
 .pub-meta { margin: 0; color: var(--muted); }
 .pub-journal {
-  margin: 12px 0 0;
+  margin: 6px 0 0;
   color: #1F2937;
   font-weight: 650;
-  background: var(--surface-teal);
-  border: 1px solid rgba(8, 145, 178, 0.14);
-  border-radius: 6px;
-  padding: 8px 12px;
 }
 
 .year {
@@ -400,9 +396,22 @@
 
 .post-item-top {
   display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.post-item-top > .post-right,
+.post-item-top > .post-date {
+  order: -1;
+}
+
+.post-item .post-right { justify-content: flex-start; }
+.post-item .post-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .post-item-title { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
@@ -478,14 +487,16 @@
 .gallery-caption { color: var(--muted); margin-top: 6px; }
 
 /* Contact */
+.contact-page .section { padding: 48px 0 64px; }
+
 .contact-shell {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 0 auto;
   background: #ffffff;
   border-radius: 8px;
   border: 1px solid var(--border);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 40px;
+  padding: 24px;
 }
 
 .contact-grid {
@@ -651,3 +662,71 @@
     line-height: 1.35;
   }
 }
+
+/* A single gallery entry fills the row; multiple entries retain the grid. */
+.gallery-page .section { padding: var(--space-7) 0; }
+.gallery-grid--single { grid-template-columns: minmax(0, 1fr); }
+.gallery-grid--single .gallery-thumb { height: auto; aspect-ratio: 4 / 3; }
+.gallery-grid--single .gallery-thumb img { object-fit: contain; }
+@media (min-width: 720px) {
+  .gallery-grid--single .gallery-item {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 0;
+    align-items: center;
+    overflow: hidden;
+  }
+  .gallery-grid--single .gallery-thumb { border: 0; border-radius: 0; }
+  .gallery-grid--single .gallery-meta { padding: 32px; }
+}
+
+/* Align contact details and actions across each row of member cards. */
+.members-page .person-main {
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.members-page .person-top { flex-wrap: wrap; gap: 6px 12px; }
+.members-page .person-tags { margin-bottom: 12px; gap: 6px; }
+.members-page .person .tag { padding: 4px 9px; font-size: 0.8rem; }
+.members-page .person-email {
+  margin: auto 0 0;
+  padding-top: 6px;
+  color: var(--muted-2);
+  font-size: 0.92rem;
+}
+.members-page .person-actions { margin-top: auto; padding-top: 10px; }
+.members-page .person-email + .person-actions { margin-top: 0; }
+@media (min-width: 980px) {
+  .members-page .person-actions { min-height: 44px; }
+}
+
+/* Match the contact information and map edges without changing map behavior. */
+.contact-page .map-section {
+  max-width: 900px;
+  margin: 32px auto 0;
+}
+@media (max-width: 719px) {
+  .contact-page .section { padding: 32px 0 48px; }
+  .contact-shell { padding: 16px; }
+  .contact-card { padding: 18px; }
+}
+
+/* A lone card needs no reserved action row when there are no controls. */
+.members-page .person:only-child .person-actions:not(:has(> *)) {
+  display: none;
+}
+
+/* Shared research and people presentation in both languages. */
+.feature-icon svg { width: 25px; height: 25px; }
+.research-grid .feature-icon { margin-bottom: 16px; }
+.research-grid .feature-title { font-size: 1.08rem; line-height: 1.5; }
+.pi-name-en { color: var(--muted-2); font-weight: 700; }
+.pi-themes { margin-top: 20px; }
+.pi-methods { margin: 16px 0 20px; color: var(--muted); font-size: 0.9rem; }
+.pi-methods p { margin: 6px 0 0; }
+.person-affiliation { margin: 6px 0 0; color: var(--muted-2); font-size: 0.92rem; }
+.members-page .pi-section { padding-bottom: 32px; }
+.members-page .members-directory { padding-top: 32px; }
+
+.pi-affiliation { margin: 6px 0 0; color: var(--muted); font-size: 0.92rem; }

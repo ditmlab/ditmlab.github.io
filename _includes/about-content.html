@@ -1,0 +1,8 @@
+{% assign lang = page.lang | default: 'ko' %}
+{% assign t = site.data.site_text[lang] %}
+<section class="page-hero about-hero"><div class="container"><h1>{{ t.about_title }}</h1><p>{{ t.about_subtitle }}</p></div></section>
+<section class="section section--tight about-page"><div class="container">
+  <p class="lead">{{ site.data.research.about[lang] }}</p>
+  {% include research-themes.html cards=true %}
+  <section class="card about-cta" aria-label="{{ t.join }}"><h2 class="card-title">{{ t.join }}</h2><p class="card-text">{{ t.join_text }}</p><div class="about-cta-actions"><a class="btn btn--brand" href="mailto:{{ site.data.pi.email }}">{{ t.email_us }}</a><a class="btn btn--soft" href="{{ t.contact_url }}">{{ t.contact_details }}</a></div></section>
+</div></section>

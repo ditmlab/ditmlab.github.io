@@ -28,7 +28,7 @@ permalink: /professor.html
       <div class="prof-box">
         <h2 class="prof-name">{{ pi.name_ko }}</h2>
         <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
-          {% assign interests = pi.interests | split: ',' %}
+          {% assign interests = site.data.research.themes | map: 'title' %}
           {% for t in interests %}
           <span class="tag">{{ t | strip }}</span>
           {% endfor %}
@@ -58,7 +58,7 @@ permalink: /professor.html
     <div class="grid">
       <div class="card">
         <h3 class="card-title">연구 분야</h3>
-        {% assign interests = pi.interests | default: '' | split: ',' %}
+        {% assign interests = site.data.research.themes | map: 'title' %}
         <div style="display:flex; flex-wrap:wrap; gap:10px;">
           {% for t in interests %}
           {% assign tag = t | strip %}
