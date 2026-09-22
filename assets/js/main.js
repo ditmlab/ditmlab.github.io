@@ -162,13 +162,16 @@
     const item = list[galleryIndex] || {};
     const title = item.title || "사진";
     const date = item.date || "";
-    const caption = item.caption || "";
+    const caption = item.caption && item.caption !== title ? item.caption : "";
     const image = item.image || "";
 
     if (galleryModalImg) galleryModalImg.src = image;
     if (galleryModalTitle) galleryModalTitle.textContent = title;
     if (galleryModalDate) galleryModalDate.textContent = date;
-    if (galleryModalCaption) galleryModalCaption.textContent = caption;
+    if (galleryModalCaption) {
+      galleryModalCaption.textContent = caption;
+      galleryModalCaption.hidden = !caption;
+    }
     if (galleryOpenOriginal) galleryOpenOriginal.href = image || "#";
   };
 

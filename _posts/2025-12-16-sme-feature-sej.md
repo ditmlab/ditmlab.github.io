@@ -4,6 +4,9 @@ title: "SEJ 논문, Strategic Management Explorer에 소개"
 author: "DITM Lab"
 categories: [news]
 summary: "SEJ(FT50) 게재 논문이 SMS의 Strategic Management Explorer에 소개되었습니다."
+title_en: "SEJ paper featured in Strategic Management Explorer"
+summary_en: "A paper published in Strategic Entrepreneurship Journal was featured in the Strategic Management Society’s Strategic Management Explorer."
+en_url: /en/news/2025/12/16/sme-feature-sej/
 ---
 
 

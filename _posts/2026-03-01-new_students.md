@@ -4,6 +4,9 @@ title: "새로운 학생들을 환영합니다!"
 author: "DITM Lab"
 categories: [new_students]
 summary: "DITM Lab에 새로운 학생들이 입학했습니다."
+title_en: "Welcome to our new students!"
+summary_en: "New master’s students have joined DITM Lab."
+en_url: /en/news/2026/03/01/new_students/
 ---
 
 ## 새로운 학생들

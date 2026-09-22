@@ -3,7 +3,18 @@
   <article class="{% if include.cards %}card{% else %}feature{% endif %}">
     <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{{ theme.icon }}</svg></div>
     <div><h{% if include.cards %}2{% else %}3{% endif %} class="feature-title">{{ theme.title | escape }}</h{% if include.cards %}2{% else %}3{% endif %}>
-    <p class="feature-text">{{ theme.description[lang] }}</p></div>
+    <p class="feature-text">{{ theme.description[lang] }}</p>
+    {% if include.publications and theme.publication_url %}
+      {% assign theme_paper = site.data.publications | where: 'url', theme.publication_url | first %}
+      {% if theme_paper %}
+      <div class="theme-publication">
+        <p class="theme-question">{{ theme.research_question[lang] }}</p>
+        <a class="inline-link" href="{{ theme_paper.url }}" target="_blank" rel="noopener noreferrer">{{ theme_paper.title | escape }} <span aria-hidden="true">↗</span></a>
+        <p class="theme-publication-meta">{{ theme_paper.venue }} · {{ theme_paper.year }}</p>
+      </div>
+      {% endif %}
+    {% endif %}
+    </div>
   </article>
   {% endfor %}
 </div>

@@ -670,7 +670,7 @@
 .gallery-grid--single .gallery-thumb img { object-fit: contain; }
 @media (min-width: 720px) {
   .gallery-grid--single .gallery-item {
-    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: 0;
     align-items: center;
     overflow: hidden;
@@ -730,3 +730,29 @@
 .members-page .members-directory { padding-top: 32px; }
 
 .pi-affiliation { margin: 6px 0 0; color: var(--muted); font-size: 0.92rem; }
+
+/* Keep the visible news introduction-to-list gap near 56px. */
+.news-page .section { padding-top: 30px; }
+.pub-legend { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 12px !important; color: var(--muted-2); }
+.pub-legend .pub-badge { flex-shrink: 0; white-space: nowrap; }
+.pub-details { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; margin-top: 6px; }
+.pub-details .pub-journal { margin: 0; }
+.pub-details .year { height: auto; padding: 0; border: 0; background: none; color: var(--muted); }
+.footer-text + .footer-text { margin-top: 6px; }
+.footer-contact { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 14px; }
+.footer-contact .footer-text { margin: 0; }
+@media (max-width: 719px) {
+  .contact-shell { padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+  .footer-contact { flex-direction: column; }
+  .pub-item { padding: 16px; }
+}
+
+/* Compact bibliography; featured publications retain their emphasis. */
+.pub-all .pub-list { gap: 0; }
+.pub-all .pub-item { padding: 18px 0; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: none; box-shadow: none; transform: none; }
+.pub-all .pub-item:last-child { border-bottom: 0; }
+.pub-all .pub-title { margin-bottom: 5px; }
+.pub-all .pub-meta { font-size: 0.94rem; }
+.pub-all .pub-extra { margin-top: 6px; }
+.pub-all-head { padding: 0 0 16px; border: 0; border-bottom: 2px solid var(--border); border-radius: 0; background: none; }
+.post-hero .container, .post-body .container { max-width: 920px; }

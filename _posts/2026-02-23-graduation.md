@@ -4,6 +4,9 @@ title: "이하람 석사 졸업을 축하합니다!"
 author: "DITM Lab"
 categories: [graduation]
 summary: "이하람 학생이 석사 과정을 성공적으로 마치고 졸업을 하였습니다."
+title_en: "Congratulations to Haram Lee on completing the master’s program!"
+summary_en: "Haram Lee has successfully completed the master’s program."
+en_url: /en/news/2026/02/23/graduation/
 ---
 
 ## 졸업 소식

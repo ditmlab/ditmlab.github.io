@@ -4,6 +4,9 @@ title: "2026년 2학기 새로운 연구원을 환영합니다!"
 author: "DITM Lab"
 categories: [news]
 summary: "DITM Lab에 새로운 연구원들이 합류했습니다."
+title_en: "Welcome to our new members for Fall 2026!"
+summary_en: "Seunggyu Go and Yeonwoo Kim have joined DITM Lab for the Fall 2026 semester."
+en_url: /en/news/2026/09/01/welcome-new-members/
 ---
 
 ## 새로운 연구원

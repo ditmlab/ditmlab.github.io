@@ -15,7 +15,12 @@
         "en": "How AI changes human judgment, work, and organizational decision-making.",
         "ko": "AI가 인간의 판단, 업무, 조직의 의사결정을 어떻게 변화시키는지 연구합니다."
       },
-      "icon": "<circle cx=\"8\" cy=\"7\" r=\"3\"/><path d=\"M2 21v-3a6 6 0 0 1 12 0v3M11 9l7 3M14 17l4-3\"/><circle cx=\"20\" cy=\"13\" r=\"2\"/>"
+      "icon": "<circle cx=\"8\" cy=\"7\" r=\"3\"/><path d=\"M2 21v-3a6 6 0 0 1 12 0v3M11 9l7 3M14 17l4-3\"/><circle cx=\"20\" cy=\"13\" r=\"2\"/>",
+      "publication_url": "https://doi.org/10.1002/smj.3694",
+      "research_question": {
+        "ko": "AI는 인간의 의사결정을 어떻게 개선하는가?",
+        "en": "How does AI improve human decision-making?"
+      }
     },
     {
       "id": "platforms",
@@ -24,7 +29,12 @@
         "en": "How digital technologies reshape markets, platforms, entrepreneurial activity, and interorganizational relationships.",
         "ko": "디지털 기술이 시장, 플랫폼, 창업 활동과 조직 간 관계를 어떻게 재편하는지 연구합니다."
       },
-      "icon": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/><circle cx=\"20\" cy=\"4\" r=\"2\"/><circle cx=\"4\" cy=\"20\" r=\"2\"/><circle cx=\"20\" cy=\"20\" r=\"2\"/><path d=\"m6 6 4 4m4 4 4 4M18 6l-4 4m-4 4-4 4\"/>"
+      "icon": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/><circle cx=\"20\" cy=\"4\" r=\"2\"/><circle cx=\"4\" cy=\"20\" r=\"2\"/><circle cx=\"20\" cy=\"20\" r=\"2\"/><path d=\"m6 6 4 4m4 4 4 4M18 6l-4 4m-4 4-4 4\"/>",
+      "publication_url": "https://doi.org/10.1002/sej.1538",
+      "research_question": {
+        "ko": "디지털 플랫폼은 지역 창업 활동을 어떻게 바꾸는가?",
+        "en": "How do digital platforms affect local entrepreneurship?"
+      }
     },
     {
       "id": "innovation",
@@ -33,7 +43,12 @@
         "en": "How technological and institutional change reshape firm innovation, strategy, and adaptation.",
         "ko": "기술적·제도적 변화가 기업의 혁신, 전략과 적응을 어떻게 바꾸는지 연구합니다."
       },
-      "icon": "<path d=\"M12 22V12M12 12 4 4m8 8 8-8M4 10V4h6M14 4h6v6\"/>"
+      "icon": "<path d=\"M12 22V12M12 12 4 4m8 8 8-8M4 10V4h6M14 4h6v6\"/>",
+      "publication_url": "https://doi.org/10.1016/j.respol.2024.105057",
+      "research_question": {
+        "ko": "제도적 환경과 혁신은 어떻게 연결되는가?",
+        "en": "How do institutional environments relate to innovation?"
+      }
     }
   ]
 }

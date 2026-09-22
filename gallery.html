@@ -26,7 +26,7 @@ body_class: gallery-page
         <div class="gallery-meta">
           <div class="gallery-title">{{ item.title }}</div>
           {% if item.date %}<div class="gallery-date">{{ item.date }}</div>{% endif %}
-          {% if item.caption %}<div class="gallery-caption">{{ item.caption }}</div>{% endif %}
+          {% if item.caption and item.caption != item.title %}<div class="gallery-caption">{{ item.caption }}</div>{% endif %}
         </div>
       </a>
       {% endfor %}

@@ -13,8 +13,8 @@
     <div class="container">
         <div class="hero-content hero-content--center">
             <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Yonsei University · Graduate School of Information</div>
-            <h1 class="hero-title">{% if lang == 'en' %}Digital Innovation and Technology Management Lab{% else %}디지털혁신 및 기술경영 연구실{% endif %}</h1>
-            <p class="hero-subtitle">{% if lang == 'en' %}{{ site.data.research.statement.en }}{% else %}Digital Innovation and Technology Management Lab{% endif %}</p>
+            <h1 class="hero-title">{% if lang == 'en' %}Digital Innovation and Technology Management Lab{% else %}<span class="hero-title-group">디지털혁신 및</span> <span class="hero-title-group">기술경영 연구실</span>{% endif %}</h1>
+            <p class="hero-subtitle">{{ site.data.research.statement[lang] }}</p>
             <div class="hero-actions hero-actions--center">
                 <a class="btn btn--solid" href="{{ t.about_url }}">{{ t.about_title }}</a>
                 <a class="btn btn--outline" href="{{ t.contact_url }}">{{ t.contact }}</a>
@@ -25,19 +25,15 @@
 
 <section class="section home-section" aria-label="{{ t.research }}">
     <div class="container">
-        <div class="home-split">
+        <div class="home-research">
             <div>
                 <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Research</div>
                 <h2 class="h2">{{ t.research }}</h2>
                 <p class="lead">{{ site.data.research.statement[lang] }}</p>
 
-                {% include research-themes.html %}
+                {% include research-themes.html publications=true %}
             </div>
 
-            <aside class="home-panel" aria-label="Quick Links">
-                <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Quick Links</div>
-                <ul class="home-links">{% for link in t.links %}<li><a class="home-link" href="{{ link.url }}"><span>{{ link.title }}</span></a></li>{% endfor %}</ul>
-            </aside>
         </div>
     </div>
 </section>
@@ -53,7 +49,7 @@
                 {% for post in site.posts limit: 2 %}
                     <article class="post-item">
                         <div class="post-item-top">
-                            <h3 class="post-item-title"><a class="inline-link" href="{{ post.url }}">{% if lang == 'en' %}{{ post.title_en | default: post.title }}{% else %}{{ post.title }}{% endif %}</a></h3>
+                            <h3 class="post-item-title"><a class="inline-link" href="{% if lang == 'en' and post.en_url %}{{ post.en_url }}{% else %}{{ post.url }}{% endif %}">{% if lang == 'en' %}{{ post.title_en | default: post.title }}{% else %}{{ post.title }}{% endif %}</a></h3>
                             <div class="post-right">
                                 {% assign is_award = false %}
                                 {% if post.categories contains 'award' %}{% assign is_award = true %}{% endif %}
