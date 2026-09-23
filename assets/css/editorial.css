@@ -103,3 +103,17 @@
 @media (max-width: 599px) { .home-research .feature, .research-grid .card { padding: 20px; } .about-page .about-cta { padding: 22px; } }
 body.contact-page { background: #fff; --surface-2: #fff; }
 .contact-page .page-hero { background: #fff; }
+
+/* Align research text without imposing empty rows on mobile. */
+@media (min-width: 980px) {
+  .home-research .feature, .research-grid .card { display: flex; flex-direction: column; }
+  .theme-content { display: flex; flex-direction: column; flex: 1; }
+  .theme-content .feature-title { min-height: 3em; }
+  .theme-content .theme-publication { margin-top: auto; padding-top: 22px; min-height: 106px; }
+}
+.home-news-group .post-item--photo { display: grid; grid-template-columns: minmax(0, 1fr) 112px; column-gap: 20px; align-items: start; }
+.home-news-photo { grid-column: 2; grid-row: 1; display: block; width: 100%; height: auto; border-radius: 4px; }
+.home-news-copy { grid-column: 1; grid-row: 1; min-width: 0; }
+@media (max-width: 979px) and (min-width: 700px), (max-width: 399px) {
+  .home-news-group .post-item--photo { grid-template-columns: minmax(0, 1fr) 88px; column-gap: 16px; }
+}
