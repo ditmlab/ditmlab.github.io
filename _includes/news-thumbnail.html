@@ -1,0 +1,22 @@
+{%- assign news_image = post.preview_image | default: post.home_image -%}
+{%- assign news_image_width = nil -%}
+{%- assign news_image_height = nil -%}
+{%- if post.preview_image -%}
+  {%- assign news_image_width = post.preview_image_width -%}
+  {%- assign news_image_height = post.preview_image_height -%}
+{%- elsif post.home_image -%}
+  {%- assign news_image_width = post.home_image_width -%}
+  {%- assign news_image_height = post.home_image_height -%}
+{%- endif -%}
+{%- unless news_image -%}
+  {%- assign news_body = post.content | markdownify -%}
+  {%- if news_body contains '<img ' -%}
+    {%- assign first_image = news_body | split: '<img ' | slice: 1 | first | split: '>' | first -%}
+    {%- assign news_image = first_image | split: 'src="' | last | split: '"' | first -%}
+  {%- endif -%}
+{%- endunless -%}
+{%- if lang == 'en' -%}
+  {%- assign news_image_alt = post.preview_image_alt_en | default: post.home_image_alt_en | default: post.title_en | default: post.title -%}
+{%- else -%}
+  {%- assign news_image_alt = post.preview_image_alt | default: post.home_image_alt | default: post.title -%}
+{%- endif -%}

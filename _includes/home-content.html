@@ -52,8 +52,9 @@
                 <h3>{% if group == 'research' %}{% if lang == 'en' %}Research & recognition{% else %}연구 성과{% endif %}{% else %}{% if lang == 'en' %}Lab life{% else %}연구실 일상{% endif %}{% endif %}</h3>
                 {% assign group_posts = site.posts | where: 'news_group', group %}
                 {% for post in group_posts limit: 2 %}
-                <article class="post-item{% if post.home_image %} post-item--photo{% endif %}">
-                  {% if post.home_image %}<img class="home-news-photo" src="{{ post.home_image }}" alt="{% if lang == 'en' %}{{ post.home_image_alt_en | escape }}{% else %}{{ post.home_image_alt | escape }}{% endif %}" loading="lazy" width="{{ post.home_image_width }}" height="{{ post.home_image_height }}">{% endif %}
+{% include news-thumbnail.html %}
+                <article class="post-item{% if news_image %} post-item--photo{% endif %}">
+                  {% if news_image %}<img class="home-news-photo" src="{{ news_image | escape }}" alt="{{ news_image_alt | escape }}" loading="lazy" {% if news_image_width and news_image_height %}width="{{ news_image_width }}" height="{{ news_image_height }}"{% endif %}>{% endif %}
                   <div class="home-news-copy">
                   <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
                   <h4 class="post-item-title"><a class="inline-link" href="{% if lang == 'en' and post.en_url %}{{ post.en_url }}{% else %}{{ post.url }}{% endif %}">{% if lang == 'en' %}{{ post.home_title_en | default: post.title_en | default: post.title }}{% else %}{{ post.home_title | default: post.title }}{% endif %}</a></h4>

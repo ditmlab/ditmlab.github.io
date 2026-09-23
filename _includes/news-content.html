@@ -1,0 +1,34 @@
+{% assign lang = page.lang | default: 'ko' %}
+<section class="page-hero"><div class="container">
+  <h1>{% if lang == 'en' %}News{% else %}소식{% endif %}</h1>
+  <p>{% if lang == 'en' %}Updates, awards, and announcements from DITM Lab.{% else %}연구실의 주요 소식, 수상, 공지사항을 확인하세요.{% endif %}</p>
+</div></section>
+<section class="section section--alt"><div class="container news-archive">
+{% assign years = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
+{% for year in years %}
+<section class="news-year" aria-labelledby="news-year-{{ year.name }}">
+  <h2 id="news-year-{{ year.name }}" class="news-year-title">{{ year.name }}</h2>
+  {% for post in year.items %}
+  {% assign category = 'announcement' %}
+  {% if post.news_group == 'research' %}{% assign category = 'research' %}{% endif %}
+  {% if post.news_group == 'life' %}{% assign category = 'people' %}{% endif %}
+  {% if post.categories contains 'events' %}{% assign category = 'event' %}{% endif %}
+  {% if post.categories contains 'grant' %}{% assign category = 'grant' %}{% endif %}
+  {% if post.categories contains 'award' or post.tags contains 'award' %}{% assign category = 'award' %}{% endif %}
+  {% if post.slug == 'welcome' %}{% assign category = 'announcement' %}{% endif %}
+{% include news-thumbnail.html %}
+  <article class="news-entry{% if news_image %} news-entry--photo{% endif %}">
+    <div class="news-entry-meta">
+      <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+      <span class="news-category">{% if lang == 'en' %}{% case category %}{% when 'award' %}Award{% when 'grant' %}Research grant{% when 'research' %}Research{% when 'event' %}Lab event{% when 'people' %}People{% else %}Announcement{% endcase %}{% else %}{% case category %}{% when 'award' %}수상{% when 'grant' %}연구비{% when 'research' %}연구{% when 'event' %}행사{% when 'people' %}구성원{% else %}공지{% endcase %}{% endif %}</span>
+    </div>
+    <div class="news-entry-copy">
+      <h3><a class="inline-link" href="{% if lang == 'en' %}{{ post.en_url | default: post.url }}{% else %}{{ post.url }}{% endif %}">{% if lang == 'en' %}{{ post.home_title_en | default: post.title_en | default: post.title | escape }}{% else %}{{ post.home_title | default: post.title | escape }}{% endif %}</a></h3>
+      <p>{% if lang == 'en' %}{{ post.summary_en | default: post.summary | default: post.excerpt | strip_html | strip_newlines | truncate: 180 }}{% else %}{{ post.summary | default: post.excerpt | strip_html | strip_newlines | truncate: 180 }}{% endif %}</p>
+    </div>
+    {% if news_image %}<img class="news-entry-photo" src="{{ news_image | escape }}" alt="{{ news_image_alt | escape }}" {% if news_image_width and news_image_height %}width="{{ news_image_width }}" height="{{ news_image_height }}"{% endif %} loading="lazy">{% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% else %}<p class="lead">{% if lang == 'en' %}There are no news posts yet.{% else %}아직 등록된 소식이 없습니다.{% endif %}</p>{% endfor %}
+</div></section>

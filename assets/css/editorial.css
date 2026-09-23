@@ -117,3 +117,65 @@ body.contact-page { background: #fff; --surface-2: #fff; }
 @media (max-width: 979px) and (min-width: 700px), (max-width: 399px) {
   .home-news-group .post-item--photo { grid-template-columns: minmax(0, 1fr) 88px; column-gap: 16px; }
 }
+
+/* Shared page rhythm; the home video keeps its existing dimensions. */
+.page-hero { padding: 40px 0 28px; }
+.page-hero h1 { margin: 0 0 12px; font-size: 2.5rem; line-height: 1.3; }
+.h2 { margin: 0 0 16px; font-size: 1.875rem; line-height: 1.4; }
+main > .section { padding-top: 40px; padding-bottom: 48px; }
+main > .home-section { padding-block: 32px; }
+main > .home-section + .home-section { padding-top: 24px; }
+.members-page .pi-section { padding-bottom: 24px; }
+.members-page .members-directory { padding-top: 24px; }
+.about-page .about-cta { margin-top: 40px; }
+.home-research .feature-list { gap: 24px; margin-top: 24px; }
+.home-research .feature, .research-grid .card { gap: 0; }
+.home-research .feature-icon, .research-grid .feature-icon { margin-bottom: 16px; }
+.home-research .feature-title, .research-grid .feature-title { font-size: 1.125rem; line-height: 1.45; }
+.theme-content .feature-text { margin-top: 10px; line-height: 1.7; }
+.theme-content .theme-publication { padding-top: 18px; min-height: 0; }
+.home-news-group .post-item-title { font-size: 1.125rem; line-height: 1.5; }
+.post-excerpt { line-height: 1.7; }
+.news-year + .news-year { margin-top: 44px; }
+.news-year-title { margin: 0 0 12px; color: var(--brand); font-size: 1.5rem; line-height: 1.4; }
+.news-entry { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid var(--border); align-items: start; }
+.news-entry--photo { grid-template-columns: 136px minmax(0, 1fr) 112px; }
+.news-entry-meta { display: flex; flex-direction: column; gap: 6px; padding-top: 3px; }
+.news-category { color: var(--muted); font-size: 0.875rem; }
+.news-entry h3 { margin: 0; font-size: 1.3125rem; font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
+.news-entry-copy p { margin: 8px 0 0; font-size: 1rem; line-height: 1.7; color: var(--muted); }
+.news-entry-photo { display: block; width: 112px; height: auto; border-radius: 4px; }
+@media (max-width: 699px) {
+  .page-hero { padding: 28px 0 24px; }
+  .page-hero h1 { font-size: 1.875rem; margin-bottom: 10px; }
+  .h2 { font-size: 1.5625rem; margin-bottom: 14px; }
+  main > .section { padding-top: 28px; padding-bottom: 36px; }
+  main > .home-section { padding-block: 28px; }
+  main > .home-section + .home-section { padding-top: 16px; }
+  .members-page .pi-section { padding-bottom: 20px; }
+  .members-page .members-directory { padding-top: 20px; }
+  .about-page .about-cta { margin-top: 28px; }
+  .home-research .feature-list, .home-news-groups { margin-top: 20px; }
+  .news-year + .news-year { margin-top: 32px; }
+  .news-year-title { font-size: 1.375rem; }
+  .news-entry, .news-entry--photo { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 20px 0; }
+  .news-entry-meta { flex-direction: row; align-items: baseline; gap: 12px; padding-top: 0; }
+  .news-entry h3 { font-size: 1.1875rem; }
+  .news-entry--photo { grid-template-columns: minmax(0, 1fr) 88px; column-gap: 16px; }
+  .news-entry--photo .news-entry-meta { grid-column: 1 / -1; }
+  .news-entry-photo { width: 88px; grid-column: 2; grid-row: 2; }
+}
+@media (max-width: 979px) {
+  .theme-content .theme-publication { margin-top: 18px; padding-top: 0; }
+}
+.news-entry-photo { max-height: 112px; object-fit: contain; object-position: right top; }
+:is(.about-page, .members-page, .publications-page, .news-page, .gallery-page, .contact-page) main > .section { padding: 40px 0 48px; }
+.members-page main > .pi-section { padding-bottom: 24px; }
+.members-page main > .members-directory { padding-top: 24px; }
+@media (max-width: 699px) {
+  :is(.about-page, .members-page, .publications-page, .news-page, .gallery-page, .contact-page) main > .section { padding: 28px 0 36px; }
+  .members-page main > .pi-section { padding-bottom: 20px; }
+  .members-page main > .members-directory { padding-top: 20px; }
+}
+/* Preserve the full frame of portrait and landscape event photos. */
+.gallery-grid:not(.gallery-grid--single) .gallery-thumb img { object-fit: contain; }
