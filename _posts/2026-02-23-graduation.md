@@ -1,4 +1,5 @@
 ---
+news_group: life
 layout: post
 title: "이하람 석사 졸업을 축하합니다!"
 author: "DITM Lab"

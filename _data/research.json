@@ -20,6 +20,10 @@
       "research_question": {
         "ko": "AI는 인간의 의사결정을 어떻게 개선하는가?",
         "en": "How does AI improve human decision-making?"
+      },
+      "publication_label": {
+        "ko": "AI와 인간의 의사결정",
+        "en": "AI and human decision-making"
       }
     },
     {
@@ -34,6 +38,10 @@
       "research_question": {
         "ko": "디지털 플랫폼은 지역 창업 활동을 어떻게 바꾸는가?",
         "en": "How do digital platforms affect local entrepreneurship?"
+      },
+      "publication_label": {
+        "ko": "디지털 플랫폼과 지역 창업",
+        "en": "Digital platforms and local entrepreneurship"
       }
     },
     {
@@ -48,6 +56,10 @@
       "research_question": {
         "ko": "제도적 환경과 혁신은 어떻게 연결되는가?",
         "en": "How do institutional environments relate to innovation?"
+      },
+      "publication_label": {
+        "ko": "제도적 환경과 혁신",
+        "en": "Institutions and innovation"
       }
     }
   ]

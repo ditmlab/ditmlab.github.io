@@ -1,0 +1,26 @@
+{% assign en = false %}{% if page.lang == 'en' %}{% assign en = true %}{% endif %}
+<section class="page-hero"><div class="container"><h1>{% if en %}Contact{% else %}연락처{% endif %}</h1><p>{% if en %}DITM Lab · Graduate School of Information, Yonsei University{% else %}연세대학교 정보대학원 · 디지털혁신 및 기술경영 연구실{% endif %}</p></div></section>
+<section class="section"><div class="container contact-layout">
+  <section class="contact-directory" aria-labelledby="directory-title">
+    <h2 id="directory-title">DITM Lab</h2>
+    <dl>
+      <div><dt>{% if en %}Email{% else %}이메일{% endif %}</dt><dd><a href="mailto:{{ site.data.pi.email }}">{{ site.data.pi.email }}</a></dd></div>
+      <div><dt>{% if en %}Phone{% else %}전화{% endif %}</dt><dd><a href="tel:+82221234532">{% if en %}+82-2-2123-4532{% else %}02-2123-4532{% endif %}</a></dd></div>
+      <div><dt>{% if en %}Address{% else %}주소{% endif %}</dt><dd>{% if en %}New Millennium Hall, Yonsei University<br>50 Yonsei-ro, Seodaemun-gu, Seoul 03722, Republic of Korea{% else %}서울특별시 서대문구 연세로 50<br>연세대학교 새천년관 (우: 03722){% endif %}</dd></div>
+      <div><dt>{% if en %}Rooms{% else %}연구실{% endif %}</dt><dd>{% if en %}Student lab: B119-2<br>Faculty office: 421{% else %}학생연구실 B119-2호<br>교수 연구실 421호{% endif %}</dd></div>
+    </dl>
+    <p class="contact-inquiry-note">{% if en %}For student or research collaboration inquiries, please email a brief introduction and your research interests.{% else %}연구실 참여·공동연구 문의는 간단한 자기소개와 관심 연구 주제를 이메일로 보내 주세요.{% endif %}</p>
+  </section>
+  <section class="contact-location" aria-labelledby="location-title">
+    <h2 id="location-title">{% if en %}Getting here{% else %}오시는 길{% endif %}</h2>
+    {% if en %}
+    <iframe title="Google Maps: New Millennium Hall, Yonsei University" src="https://maps.google.com/maps?q=Yonsei%20University%20New%20Millennium%20Hall&amp;hl=en&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <p>New Millennium Hall (Building 606), Yonsei University.<br><a class="inline-link" href="https://maps.app.goo.gl/1zg1Bm8hLVqBXrD86" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></p>
+    {% else %}
+    <div class="contact-map"><div id="daumRoughmapContainer1766465109995" class="root_daum_roughmap root_daum_roughmap_landing"></div></div>
+    <script charset="UTF-8" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js" class="daum_roughmap_loader_script"></script>
+    <script>new daum.roughmap.Lander({"timestamp":"1766465109995","key":"ed7mvbose96","mapWidth":"640","mapHeight":"360"}).render();</script>
+    <p>연세대학교 신촌캠퍼스 새천년관</p>
+    {% endif %}
+  </section>
+</div></section>

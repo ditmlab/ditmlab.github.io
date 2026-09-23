@@ -1,4 +1,5 @@
 ---
+news_group: research
 layout: post
 title: "SEJ 논문, Strategic Management Explorer에 소개"
 author: "DITM Lab"

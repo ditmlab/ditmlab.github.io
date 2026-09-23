@@ -1,4 +1,5 @@
 ---
+news_group: life
 layout: post
 title: "2026년 2학기 새로운 연구원을 환영합니다!"
 author: "DITM Lab"

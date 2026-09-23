@@ -29,7 +29,7 @@
             <div>
                 <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Research</div>
                 <h2 class="h2">{{ t.research }}</h2>
-                <p class="lead">{{ site.data.research.statement[lang] }}</p>
+
 
                 {% include research-themes.html publications=true %}
             </div>
@@ -42,30 +42,24 @@
     <div class="container">
         <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span>News</div>
         <h2 class="h2">{{ t.news }}</h2>
-        <p class="lead">{{ t.news_intro }}</p>
+
 
         {% if site.posts and site.posts.size > 0 %}
-            <div class="post-grid" style="margin-top: var(--space-6);" aria-label="{{ t.news }}">
-                {% for post in site.posts limit: 2 %}
-                    <article class="post-item">
-                        <div class="post-item-top">
-                            <h3 class="post-item-title"><a class="inline-link" href="{% if lang == 'en' and post.en_url %}{{ post.en_url }}{% else %}{{ post.url }}{% endif %}">{% if lang == 'en' %}{{ post.title_en | default: post.title }}{% else %}{{ post.title }}{% endif %}</a></h3>
-                            <div class="post-right">
-                                {% assign is_award = false %}
-                                {% if post.categories contains 'award' %}{% assign is_award = true %}{% endif %}
-                                {% if post.tags contains 'award' %}{% assign is_award = true %}{% endif %}
-                                {% if is_award %}<span class="post-badge post-badge--award">Award</span>{% endif %}
-                                <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                            </div>
-                        </div>
-                        {% if lang == 'en' and post.summary_en %}<p class="post-excerpt">{{ post.summary_en | strip_html | strip_newlines | truncate: 140 }}</p>
-                        {% elsif post.summary %}
-                            <p class="post-excerpt">{{ post.summary | strip_html | strip_newlines | truncate: 140 }}</p>
-                        {% elsif post.excerpt %}
-                            <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
-                        {% endif %}
-                    </article>
+            <div class="home-news-groups">
+              {% assign groups = 'research,life' | split: ',' %}
+              {% for group in groups %}
+              <section class="home-news-group">
+                <h3>{% if group == 'research' %}{% if lang == 'en' %}Research & recognition{% else %}연구 성과{% endif %}{% else %}{% if lang == 'en' %}Lab life{% else %}연구실 일상{% endif %}{% endif %}</h3>
+                {% assign group_posts = site.posts | where: 'news_group', group %}
+                {% for post in group_posts limit: 2 %}
+                <article class="post-item">
+                  <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+                  <h4 class="post-item-title"><a class="inline-link" href="{% if lang == 'en' and post.en_url %}{{ post.en_url }}{% else %}{{ post.url }}{% endif %}">{% if lang == 'en' %}{{ post.title_en | default: post.title }}{% else %}{{ post.title }}{% endif %}</a></h4>
+                  <p class="post-excerpt">{% if lang == 'en' %}{{ post.summary_en | strip_html }}{% else %}{{ post.summary | strip_html }}{% endif %}</p>
+                </article>
                 {% endfor %}
+              </section>
+              {% endfor %}
             </div>
             <div class="home-cta">
                 <a class="btn btn--brand" href="{{ t.news_url }}">{{ t.all_news }}</a>

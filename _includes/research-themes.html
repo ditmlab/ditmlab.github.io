@@ -8,8 +8,7 @@
       {% assign theme_paper = site.data.publications | where: 'url', theme.publication_url | first %}
       {% if theme_paper %}
       <div class="theme-publication">
-        <p class="theme-question">{{ theme.research_question[lang] }}</p>
-        <a class="inline-link" href="{{ theme_paper.url }}" target="_blank" rel="noopener noreferrer">{{ theme_paper.title | escape }} <span aria-hidden="true">↗</span></a>
+        <a class="inline-link" href="{{ theme_paper.url }}" target="_blank" rel="noopener noreferrer">{% if lang == "en" %}Selected paper: {% else %}대표 논문: {% endif %}{{ theme.publication_label[lang] | escape }} <span aria-hidden="true">↗</span></a>
         <p class="theme-publication-meta">{{ theme_paper.venue }} · {{ theme_paper.year }}</p>
       </div>
       {% endif %}

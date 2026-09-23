@@ -8,18 +8,4 @@ permalink: /en/contact/
 body_class: contact-page
 ---
 
-<section class="page-hero"><div class="container"><h1>Contact</h1><p>Please use the details below for inquiries.</p></div></section>
-<section class="section"><div class="container"><div class="contact-shell" aria-label="Contact information"><div class="contact-grid">
-  <section class="contact-card contact-card--full"><h2 class="contact-card-title">Address</h2><p class="contact-card-text">New Millennium Hall, Yonsei University, 50 Yonsei-ro, Seodaemun-gu, Seoul 03722, Republic of Korea</p><p class="contact-card-text" style="margin-top:10px;">Student Lab: B119-2 · Faculty Office: Room 421</p></section>
-  <section class="contact-card"><h2 class="contact-card-title">Telephone</h2><p class="contact-card-text">02-2123-4532</p></section>
-  <section class="contact-card"><h2 class="contact-card-title">Email</h2><p class="contact-card-text"><a class="inline-link" href="mailto:namil.kim@yonsei.ac.kr">namil.kim@yonsei.ac.kr</a></p></section>
-</div></div>
-  <section class="map-section" aria-labelledby="directions-title">
-    <h2 id="directions-title">Directions</h2>
-    <p>Find us at New Millennium Hall (Building 606), Yonsei University. The student lab is in B119-2, and the faculty office is in Room 421.</p>
-    <iframe class="contact-google-map" title="Google Maps: New Millennium Hall, Yonsei University" src="https://maps.google.com/maps?q=Yonsei%20University%20New%20Millennium%20Hall&amp;hl=en&amp;z=17&amp;output=embed" width="900" height="360" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-    <p><a class="inline-link" href="https://maps.app.goo.gl/1zg1Bm8hLVqBXrD86" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></p>
-  </section>
-</div></section>
-<style>.contact-google-map { display:block; width:100%; height:360px; margin:20px 0 16px; border:0; border-radius:16px; }</style>
-<style>.contact-grid { display:grid; grid-template-columns:1fr; gap:16px; } @media (min-width:720px) { .contact-grid { grid-template-columns:repeat(2,1fr); } .contact-card--full { grid-column:1/-1; } }</style>
+{% include contact-content.html %}

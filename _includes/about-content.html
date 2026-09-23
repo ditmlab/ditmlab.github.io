@@ -4,5 +4,12 @@
 <section class="section section--tight about-page"><div class="container">
   <p class="lead">{{ site.data.research.about[lang] }}</p>
   {% include research-themes.html cards=true %}
-  <section class="card about-cta" aria-label="{{ t.join }}"><h2 class="card-title">{{ t.join }}</h2><p class="card-text">{{ t.join_text }}</p><div class="about-cta-actions"><a class="btn btn--brand" href="mailto:{{ site.data.pi.email }}">{{ t.email_us }}</a><a class="btn btn--soft" href="{{ t.contact_url }}">{{ t.contact_details }}</a></div></section>
+  <section class="card about-cta" aria-labelledby="inquiries-title">
+    <h2 class="card-title" id="inquiries-title">{% if lang == 'en' %}Student & research inquiries{% else %}연구실 참여 및 공동연구 문의{% endif %}</h2>
+    <div class="inquiry-topics">
+      <div><h3>{% if lang == 'en' %}Prospective students{% else %}연구실 참여{% endif %}</h3><p>{% if lang == 'en' %}For inquiries about joining the lab as a master's or doctoral student, please email a brief introduction and your research interests.{% else %}석·박사과정 연구실 참여에 관심이 있다면 간단한 자기소개와 관심 연구 주제를 이메일로 보내 주세요.{% endif %}</p></div>
+      <div><h3>{% if lang == 'en' %}Research collaboration{% else %}공동연구{% endif %}</h3><p>{% if lang == 'en' %}For collaboration inquiries, please describe the research question and the collaboration you have in mind.{% else %}공동연구를 논의하고 싶다면 연구 주제와 제안하는 협업 내용을 간단히 알려 주세요.{% endif %}</p></div>
+    </div>
+    <p class="inquiry-links"><a class="btn btn--brand" href="mailto:{{ site.data.pi.email }}">{{ t.email_us }}</a><a class="inline-link" href="{{ t.contact_url }}">{{ t.contact_details }}</a></p>
+  </section>
 </div></section>

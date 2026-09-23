@@ -441,7 +441,9 @@
 /* Tie each research theme to an existing publication. */
 .theme-publication { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
 .theme-question { margin: 0 0 10px; font-weight: 700; }
-.theme-publication > a { font-size: 0.92rem; line-height: 1.6; }
+.theme-publication > a { color: #075985; font-size: 0.92rem; line-height: 1.6; text-decoration: none; text-underline-offset: 0.2em; }
+.theme-publication > a:hover,
+.theme-publication > a:focus-visible { color: #075985; text-decoration: underline; }
 .theme-publication-meta { margin: 8px 0 0; color: var(--muted); font-size: 0.85rem; }
 
 html[lang="ko"] .hero-subtitle { word-break: keep-all; overflow-wrap: normal; text-wrap: balance; }

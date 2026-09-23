@@ -138,8 +138,27 @@
     }
   };
 
+  const galleryBackground = new Map();
+  const setGalleryBackgroundInert = (open) => {
+    if (open) {
+      let branch = galleryModal;
+      while (branch && branch !== body) {
+        for (const sibling of branch.parentElement.children) {
+          if (sibling === branch || sibling === galleryModalBackdrop || galleryBackground.has(sibling)) continue;
+          galleryBackground.set(sibling, sibling.inert);
+          sibling.inert = true;
+        }
+        branch = branch.parentElement;
+      }
+    } else {
+      for (const [element, wasInert] of galleryBackground) element.inert = wasInert;
+      galleryBackground.clear();
+    }
+  };
+
   const setGalleryModalOpen = (open) => {
     if (!galleryModal || !galleryModalBackdrop) return;
+    setGalleryBackgroundInert(open);
     galleryModal.hidden = !open;
     galleryModalBackdrop.hidden = !open;
     galleryModal.setAttribute("aria-hidden", String(!open));
@@ -160,12 +179,16 @@
     if (!Array.isArray(list) || list.length === 0) return;
     galleryIndex = ((idx % list.length) + list.length) % list.length;
     const item = list[galleryIndex] || {};
-    const title = item.title || "사진";
+    const english = document.documentElement.lang === "en";
+    const title = (english ? item.title_en : item.title) || item.title || (english ? "Photo" : "사진");
     const date = item.date || "";
-    const caption = item.caption && item.caption !== title ? item.caption : "";
+    const rawCaption = english ? item.caption_en : item.caption;
+    const caption = rawCaption && rawCaption !== title ? rawCaption : "";
     const image = item.image || "";
 
-    if (galleryModalImg) galleryModalImg.src = image;
+    if (galleryModalImg) { galleryModalImg.src = image; galleryModalImg.alt = title; }
+    if (galleryPrev) galleryPrev.hidden = list.length < 2;
+    if (galleryNext) galleryNext.hidden = list.length < 2;
     if (galleryModalTitle) galleryModalTitle.textContent = title;
     if (galleryModalDate) galleryModalDate.textContent = date;
     if (galleryModalCaption) {
@@ -346,6 +369,12 @@
     }
 
     if (galleryModal && !galleryModal.hidden) {
+      if (e.key === "Tab") {
+        const stops = Array.from(galleryModal.querySelectorAll('a[href], button:not([disabled]), [tabindex="0"]')).filter(el => el.getClientRects().length && !el.closest('[hidden]'));
+        const first = stops[0], last = stops[stops.length - 1];
+        if (e.shiftKey && (document.activeElement === first || !galleryModal.contains(document.activeElement))) { e.preventDefault(); last?.focus(); }
+        else if (!e.shiftKey && (document.activeElement === last || !galleryModal.contains(document.activeElement))) { e.preventDefault(); first?.focus(); }
+      }
       if (e.key === "ArrowLeft") {
         e.preventDefault();
         renderGalleryModal(galleryIndex - 1);

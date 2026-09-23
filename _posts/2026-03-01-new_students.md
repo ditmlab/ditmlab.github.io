@@ -1,4 +1,5 @@
 ---
+news_group: life
 layout: post
 title: "새로운 학생들을 환영합니다!"
 author: "DITM Lab"
