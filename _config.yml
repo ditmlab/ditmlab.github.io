@@ -7,6 +7,9 @@ permalink: pretty
 # Allow search engines to index this public website.
 noindex: false
 
+# DITM Lab Website (GA4); loaded only in production builds.
+google_analytics: "G-P2NSK1LZBW"
+
 plugins:
   - jekyll-sitemap
 

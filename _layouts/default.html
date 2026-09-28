@@ -2,6 +2,7 @@
 <html lang="{{ page.lang | default: 'ko' }}">
 <head>
   <meta charset="UTF-8" />
+  {% include analytics.html %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.lang == 'en' %} · Digital Innovation and Technology Management Lab{% else %} · 디지털혁신 및 기술경영 연구실{% endif %}</title>
   {% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
