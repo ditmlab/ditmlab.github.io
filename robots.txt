@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ditmlab.github.io/sitemap.xml
+Sitemap: https://ditmlab.yonsei.ac.kr/sitemap.xml

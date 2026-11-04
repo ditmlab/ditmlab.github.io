@@ -52,6 +52,7 @@
   venue: "Applied Economics Letters"
   year: 2025
   tags: ["TM"]
+  url: https://doi.org/10.1080/13504851.2023.2281288
   student_involved: false
   featured: false
 
@@ -71,6 +72,7 @@
   venue: "Applied Economics Letters"
   year: 2024
   tags: ["TM"]
+  url: https://doi.org/10.1080/13504851.2022.2140750
   student_involved: false
   featured: false
 
@@ -92,6 +94,7 @@
   year: 2015
   note: "FT50"
   tags: ["TM", "DT"]
+  url: https://doi.org/10.1016/j.respol.2015.02.001
   student_involved: false
   featured: true
 
@@ -101,6 +104,7 @@
   venue: "Technovation"
   year: 2026
   tags: ["DT", "TM"]
+  url: https://doi.org/10.1016/j.technovation.2025.103381
   student_involved: false
   featured: false
 
@@ -109,6 +113,7 @@
   venue: "Technological Forecasting and Social Change"
   year: 2022
   tags: ["TM"]
+  url: https://doi.org/10.1016/j.techfore.2022.121688
   student_involved: false
   featured: false
 
@@ -117,6 +122,7 @@
   venue: "Journal of Business Research"
   year: 2022
   tags: ["TM"]
+  url: https://doi.org/10.1016/j.jbusres.2022.02.007
   student_involved: false
   featured: false
 
@@ -125,6 +131,7 @@
   venue: "Journal of Business Research"
   year: 2020
   tags: ["TM"]
+  url: https://doi.org/10.1016/j.jbusres.2019.09.033
   student_involved: false
   featured: false
 
@@ -133,6 +140,7 @@
   venue: "Applied Economics Letters"
   year: 2019
   tags: ["TM"]
+  url: https://doi.org/10.1080/13504851.2018.1524122
   student_involved: false
   featured: false
 
@@ -141,6 +149,7 @@
   venue: "Journal of Business Research"
   year: 2018
   tags: ["TM"]
+  url: https://doi.org/10.1016/j.jbusres.2017.11.040
   student_involved: false
   featured: false
 
@@ -149,6 +158,7 @@
   venue: "International Journal of Information Management"
   year: 2018
   tags: ["DT"]
+  url: https://doi.org/10.1016/j.ijinfomgt.2017.10.006
   student_involved: false
   featured: false
 
@@ -157,14 +167,16 @@
   venue: "한국콘텐츠학회논문지"
   year: 2018
   tags: ["DT"]
+  url: https://doi.org/10.5392/JKCA.2018.18.05.490
   student_involved: false
   featured: false
 
-- title: "The Effect of Alliance Activity on Patent Litigation: In the Case of Printed Electronics: In the Case of Printed Electronics"
+- title: "The Effect of Alliance Activity on Patent Litigation: In the Case of Printed Electronics"
   authors: "강민정, 유재원, 김원준*, 김남일"
   venue: "기술혁신학회지"
   year: 2018
   tags: ["TM"]
+  url: https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002336423
   student_involved: false
   featured: false
 
@@ -173,6 +185,7 @@
   venue: "기업가정신과 벤처연구"
   year: 2018
   tags: ["TM"]
+  url: https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002369636
   student_involved: false
   featured: false
 
@@ -181,6 +194,7 @@
   venue: "Renewable and Sustainable Energy Reviews"
   year: 2018
   tags: ["TM"]
+  url: https://doi.org/10.1016/j.rser.2017.08.001
   student_involved: false
   featured: false
 
@@ -189,6 +203,7 @@
   venue: "한국콘텐츠학회 논문지"
   year: 2026
   tags: ["DT", "AI"]
+  url: https://doi.org/10.5392/JKCA.2026.26.08.703
   student_involved: true
   featured: false
 
@@ -197,6 +212,7 @@
   venue: "경영정보학연구"
   year: 2025
   tags: ["DT", "AI"]
+  url: https://doi.org/10.14329/isr.2025.27.4.443
   student_involved: true
   featured: false
 
@@ -205,5 +221,6 @@
   venue: "인터넷전자상거래연구"
   year: 2025
   tags: ["DT", "AI"]
+  url: https://doi.org/10.37272/JIECR.2025.8.25.4.79
   student_involved: true
   featured: false
